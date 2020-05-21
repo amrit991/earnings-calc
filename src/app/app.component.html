@@ -1,0 +1,93 @@
+<mat-card class="example-result-card" style="margin-top: 20px;margin-bottom: 20px;margin-left: 20px; margin-right: 20px;">
+
+
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+      <div style="border: 1px;">
+        <div fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+          <div>
+            <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+
+              <div class="item">
+                Where are your physician users from?<br/>
+                <mat-button-toggle-group #group="matButtonToggleGroup" value="US">
+                  <mat-button-toggle value="India">India
+                  </mat-button-toggle>
+                  <mat-button-toggle value="US">US
+                  </mat-button-toggle>
+                </mat-button-toggle-group>
+              </div>
+              <div class="item">
+                Is your platform more specifically focussed?<br/>
+                <mat-button-toggle-group #group="matButtonToggleGroup" value="Yes">
+                  <mat-button-toggle value="Yes">Yes
+                  </mat-button-toggle>
+                  <mat-button-toggle value="No">No
+                  </mat-button-toggle>
+                </mat-button-toggle-group>
+            
+              </div>    
+            
+            </div>
+          </div>
+          <div>
+            What's the type of your physician platform?<br/>
+            <mat-form-field>
+              <mat-label>Physician platform</mat-label>
+              <mat-select [(ngModel)]="selectedValue" name="platform">
+                <mat-option *ngFor="let platform of platforms" [value]="platform.value">
+                  {{platform.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <p> Selected platform: {{selectedValue}} </p>
+          </div>
+          <div>
+            Total number of registered users on your platform?<br/>
+            <mat-slider
+            class="example-margin"
+            [disabled]="disabled"
+            [invert]="invert"
+            [max]="maxUsers"
+            [min]="min"
+            [step]="stepUsers"
+            [thumbLabel]="thumbLabel"
+            [tickInterval]="getSliderTickInterval()"
+            [(ngModel)]="registeredUsers"
+            [vertical]="vertical" (change)="somethingChanged()">
+        </mat-slider>
+          </div>
+          <div>
+            No. of slots to be registered<br/>
+            <mat-slider
+              class="example-margin"
+              [disabled]="disabled"
+              [invert]="invert"
+              [max]="maxSlots"
+              [min]="min"
+              [step]="step"
+              [thumbLabel]="thumbLabel"
+              [tickInterval]="getSliderTickInterval()"
+              [(ngModel)]="totalSlots"
+              [vertical]="vertical" (change)="somethingChanged()">
+            </mat-slider>
+          </div>
+        </div>
+
+
+      </div>
+      <div>
+        <circle-progress
+        [percent]="circularValue"
+        [radius]="100"
+        [outerStrokeWidth]="16"
+        [title]= "circularTitle"
+        [innerStrokeWidth]="8"
+        [animation]="true"
+        [animationDuration]="300"
+      ></circle-progress>
+      </div>
+    </div>
+
+  </mat-card-content>
+</mat-card>
