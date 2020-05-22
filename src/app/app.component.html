@@ -53,9 +53,10 @@
             [step]="stepUsers"
             [thumbLabel]="thumbLabel"
             [tickInterval]="getSliderTickInterval()"
-            [(ngModel)]="registeredUsers"
+            (input)="registeredUsers = $event.value"
+            [value]="registeredUsers"
             [vertical]="vertical" (change)="somethingChanged()">
-        </mat-slider>
+        </mat-slider> {{registeredUsers}}
           </div>
           <div>
             No. of slots to be registered<br/>
@@ -68,9 +69,10 @@
               [step]="step"
               [thumbLabel]="thumbLabel"
               [tickInterval]="getSliderTickInterval()"
-              [(ngModel)]="totalSlots"
+              (input)="totalSlots = $event.value" 
+              [value]="totalSlots"
               [vertical]="vertical" (change)="somethingChanged()">
-            </mat-slider>
+            </mat-slider> {{totalSlots}}
           </div>
         </div>
 
