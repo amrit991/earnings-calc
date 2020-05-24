@@ -23,7 +23,7 @@ export class AppComponent implements OnInit{
   autoTicks = false;
   disabled = false;
   invert = false;
-  maxUsers = 100000;
+  maxUsers = 1000000;
   maxSlots = 10;
   min = 1;
   showTicks = false;
