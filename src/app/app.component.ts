@@ -30,6 +30,7 @@ export class AppComponent implements OnInit{
   step = 1;
   stepUsers = 1000;
   thumbLabel = true;
+  showSubtitle = false;
   registeredUsers = 1;
   totalSlots = 1;
   vertical = false;
@@ -130,9 +131,14 @@ export class AppComponent implements OnInit{
                         (this.registeredUsers)) / 1000;
     grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100
     console.log(grossEarnings);
-
+    let grossEarningsCurrency: string;
 //    let earnings = this.registeredUsers * this.totalSlots;
-    this.circularTitle = this.countryData[this.activeCountry].currency + grossEarnings;
+    if(this.activeCountry == 'US') {
+      grossEarningsCurrency = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(grossEarnings);
+    } else {
+      grossEarningsCurrency = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(grossEarnings);      
+    }
+    this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
     this.circularValue = (grossEarnings / 231206400) * 100 ;
   }
 }

@@ -41,8 +41,8 @@
             </mat-form-field>
           </div>
           <div>
-            Total number of registered users on your platform?<br/>
-            <mat-slider
+            Total number of registered users on your platform?<br/><br/>
+            <mat-slider color="primary"
             class="example-margin"
             [disabled]="disabled"
             [invert]="invert"
@@ -54,11 +54,11 @@
             (input)="registeredUsers = $event.value"
             [value]="registeredUsers"
             [vertical]="vertical" (change)="somethingChanged()">
-        </mat-slider> {{registeredUsers}}
+        </mat-slider> 
           </div>
           <div>
-            No. of slots to be registered<br/>
-            <mat-slider
+            No. of slots to be registered<br/><br/>
+            <mat-slider color="primary"
               class="example-margin"
               [disabled]="disabled"
               [invert]="invert"
@@ -70,7 +70,7 @@
               (input)="totalSlots = $event.value" 
               [value]="totalSlots"
               [vertical]="vertical" (change)="somethingChanged()">
-            </mat-slider> {{totalSlots}}
+            </mat-slider> 
           </div>
         </div>
 
@@ -81,6 +81,7 @@
         [percent]="circularValue"
         [radius]="100"
         [outerStrokeWidth]="16"
+        [showSubtitle] = "showSubtitle"
         [title]= "circularTitle"
         [innerStrokeWidth]="8"
         [animation]="true"
