@@ -17,3 +17,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
       opacity: 1 !important;
       transform: rotate(0deg) !important;
   }
+    .mat-slider-thumb-container {
+        transition: all 0.3s ease-in-out;;
+    }
