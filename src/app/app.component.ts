@@ -31,7 +31,7 @@ export class AppComponent implements OnInit{
   stepUsers = 1000;
   thumbLabel = true;
   showSubtitle = false;
-  registeredUsers = 1;
+  registeredUsers = 1000;
   totalSlots = 1;
   vertical = false;
   tickInterval = 1;
@@ -115,14 +115,6 @@ export class AppComponent implements OnInit{
   }
 
   somethingChanged() {
-    console.log('---------');
-    console.log('avgCpm/user/year: ', this.countryData[this.activeCountry].avgCpm);
-    console.log('avgImp: ', this.platformData[this.selectedPlatform].avgImp);
-    console.log('platformMultiplier: ', this.platformData[this.selectedPlatform].platformMultiplier);
-    console.log('slotMultiplier:', this.slotMultiplier[this.totalSlots]);
-    console.log('specialityMultiplier:', this.specialityMultiplier[this.specialityFocussed]);
-    console.log('registeredUsers: ', this.registeredUsers);
-
     let grossEarnings = ((this.countryData[this.activeCountry].avgCpm) * 
                         (this.platformData[this.selectedPlatform].avgImp) * 
                         (this.platformData[this.selectedPlatform].platformMultiplier) * 
@@ -130,15 +122,17 @@ export class AppComponent implements OnInit{
                         (this.specialityMultiplier[this.specialityFocussed]) * 
                         (this.registeredUsers)) / 1000;
     grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100
-    console.log(grossEarnings);
     let grossEarningsCurrency: string;
-//    let earnings = this.registeredUsers * this.totalSlots;
+    let maxGross: number;
     if(this.activeCountry == 'US') {
-      grossEarningsCurrency = new Intl.NumberFormat('en-US', { maximumSignificantDigits: 3 }).format(grossEarnings);
+      grossEarningsCurrency = new Intl.NumberFormat('en-US').format(grossEarnings);
+      maxGross = 350 * 1440 * 0.9 * 4.46 * 1 * this.maxUsers / 1000;
     } else {
-      grossEarningsCurrency = new Intl.NumberFormat('en-IN', { maximumSignificantDigits: 3 }).format(grossEarnings);      
+      grossEarningsCurrency = new Intl.NumberFormat('en-IN').format(grossEarnings);      
+      maxGross = 400 * 1440 * 0.9 * 4.46 * 1 * this.maxUsers / 1000;
     }
     this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
-    this.circularValue = (grossEarnings / 231206400) * 100 ;
+    this.circularValue = (grossEarnings / maxGross) * 100 ;
   }
+
 }

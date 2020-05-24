@@ -32,7 +32,7 @@
           </div>
           <div>
             What's the type of your physician platform?<br/>
-            <mat-form-field>
+            <mat-form-field style="width: 520px;">
               <mat-select [(ngModel)]="selectedPlatform" [(value)]="selectedPlatform" name="platform" (selectionChange)="somethingChanged()">
                 <mat-option *ngFor="let platform of platforms" [value]="platform.value">
                   {{platform.viewValue}}
@@ -42,7 +42,7 @@
           </div>
           <div>
             Total number of registered users on your platform?<br/><br/>
-            <mat-slider color="primary"
+            <mat-slider color="primary" style="width: 510px;"
             class="example-margin"
             [disabled]="disabled"
             [invert]="invert"
@@ -58,15 +58,13 @@
           </div>
           <div>
             No. of slots to be registered<br/><br/>
-            <mat-slider color="primary"
+            <mat-slider color="primary" style="width: 510px;"
               class="example-margin"
               [disabled]="disabled"
               [invert]="invert"
               [max]="maxSlots"
               [min]="min"
-              [step]="step"
               [thumbLabel]="thumbLabel"
-              [tickInterval]="getSliderTickInterval()"
               (input)="totalSlots = $event.value" 
               [value]="totalSlots"
               [vertical]="vertical" (change)="somethingChanged()">
@@ -77,16 +75,28 @@
 
       </div>
       <div>
-        <circle-progress
-        [percent]="circularValue"
-        [radius]="100"
-        [outerStrokeWidth]="16"
-        [showSubtitle] = "showSubtitle"
-        [title]= "circularTitle"
-        [innerStrokeWidth]="8"
-        [animation]="true"
-        [animationDuration]="300"
-      ></circle-progress>
+        <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+          <div>
+            <circle-progress
+            [percent]="circularValue"
+            [radius]="110"
+            [outerStrokeWidth]="14"
+            [showSubtitle] = "showSubtitle"
+            [title]= "circularTitle"
+            [innerStrokeWidth]="7"
+            [animation]="true"
+            outerStrokeLinecap = "square"
+            clockwise="false"
+            lazy="false"
+            [animationDuration]="169"
+           ></circle-progress>
+          </div>
+          <div>
+            <p style="font-weight: 500;font-size: larger;">
+              Estimated annual earnings*
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
