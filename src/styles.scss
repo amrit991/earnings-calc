@@ -2,6 +2,15 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-button-toggle.cdk-mouse-focused {
+    background: #16C0F0;
+    }
+
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 28px !important;
+    padding: 0 12px !important;
+}
+
 .mat-slider-thumb-label {
     transform: rotate(0deg) !important;
     border-radius: 0% 0% 0% 0% !important;

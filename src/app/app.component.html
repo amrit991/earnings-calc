@@ -9,7 +9,8 @@
             <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="20px">
 
               <div class="item">
-                Where are your physician users from?<br/>
+                <span>Where are your physician users from?</span>
+                <br/>
                 <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" value="US" (change)="somethingChanged()">
                   <mat-button-toggle color="primary" value="India">India
                   </mat-button-toggle>
@@ -18,7 +19,8 @@
                 </mat-button-toggle-group>
               </div>
               <div class="item">
-                Is your platform more speciality focussed?<br/>
+                <span>Is your platform more speciality focussed?</span>
+                <br/>
                 <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="specialityFocussed" value="Yes" (change)="somethingChanged()">
                   <mat-button-toggle color="primary" value="Yes">Yes
                   </mat-button-toggle>
@@ -31,7 +33,8 @@
             </div>
           </div>
           <div>
-            What's the type of your physician platform?<br/>
+            <span>What's the type of your physician platform?</span>
+            <br/>
             <mat-form-field style="width: 520px;">
               <mat-select [(ngModel)]="selectedPlatform" [(value)]="selectedPlatform" name="platform" (selectionChange)="somethingChanged()">
                 <mat-option *ngFor="let platform of platforms" [value]="platform.value">
@@ -41,7 +44,10 @@
             </mat-form-field>
           </div>
           <div>
-            Total number of registered users on your platform?<br/><br/>
+            <span>
+              Total number of registered users on your platform?
+            </span>
+            <br/>
             <mat-slider color="primary" style="width: 535px;right: 16px;"
             class="example-margin"
             [disabled]="disabled"
@@ -57,7 +63,10 @@
         </mat-slider> 
           </div>
           <div>
-            Number of Ad slots to be registered ?<br/><br/>
+            <span>
+              Number of Ad slots to be registered ?
+            </span>
+            <br/>
             <mat-slider color="primary" style="width: 535px;right: 16px;"
               class="example-margin"
               [disabled]="disabled"
@@ -91,6 +100,7 @@
             unitsColor= "#4778EF"
             outerStrokeColor= "#16C0F0"
             [animationDuration]="169"
+            titleColor= "#16C0F0"
            ></circle-progress>
           </div>
           <div>
