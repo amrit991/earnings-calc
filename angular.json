@@ -24,8 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "src/styles.scss",
+              "src/custom-theme.scss"
             ],
             "scripts": []
           },
@@ -89,8 +89,8 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
-              "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.scss",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -126,5 +126,10 @@
   "defaultProject": "earnings-calc",
   "cli": {
     "analytics": "961c880e-9fda-4b2c-99de-053d7444cf47"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
   }
 }

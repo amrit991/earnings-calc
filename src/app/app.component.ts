@@ -16,7 +16,7 @@ interface country {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
   title = 'earnings-calc';
@@ -26,16 +26,17 @@ export class AppComponent implements OnInit{
   maxUsers = 1000000;
   maxSlots = 10;
   min = 1;
+  minUsers = 50;
   showTicks = false;
   step = 1;
-  stepUsers = 1000;
+  stepUsers = 50;
   thumbLabel = true;
   showSubtitle = false;
-  registeredUsers = 1000;
+  registeredUsers = 50;
   totalSlots = 1;
   vertical = false;
   tickInterval = 1;
-  selectedPlatform: string = 'EHR';
+  selectedPlatform: string = 'Electronic Health Record';
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
   circularValue: number;
@@ -48,7 +49,7 @@ export class AppComponent implements OnInit{
   activeCountry: string = 'India';
 
   platforms: platform[] = [
-    {value: 'EHR', viewValue: 'EHR'},
+    {value: 'Electronic Health Record', viewValue: 'Electronic Health Record'},
     {value: 'Physician Networking', viewValue: 'Physician Networking'},
     {value: 'Medical Journal', viewValue: 'Medical Journal'},
     {value: 'Telemedicine', viewValue: 'Telemedicine'}
@@ -66,7 +67,7 @@ export class AppComponent implements OnInit{
   };
 // avgImp is per user per year
   platformData = {
-    'EHR': {
+    'Electronic Health Record': {
       avgImp: 1440,
       platformMultiplier: 0.9
     },
