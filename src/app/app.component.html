@@ -11,7 +11,8 @@
               <div class="item">
                 <span>Where are your physician users from?</span>
                 <br/>
-                <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" value="US" (change)="somethingChanged()">
+                <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" 
+                value="US" (change)="somethingChanged()" style="margin-top: 10px;">
                   <mat-button-toggle color="primary" value="India">India
                   </mat-button-toggle>
                   <mat-button-toggle color="primary" value="US">US
@@ -21,7 +22,8 @@
               <div class="item">
                 <span>Is your platform more speciality focussed?</span>
                 <br/>
-                <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="specialityFocussed" value="Yes" (change)="somethingChanged()">
+                <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="specialityFocussed"
+                 value="Yes" (change)="somethingChanged()" style="margin-top: 10px;">
                   <mat-button-toggle color="primary" value="Yes">Yes
                   </mat-button-toggle>
                   <mat-button-toggle color="primary" value="No">No
