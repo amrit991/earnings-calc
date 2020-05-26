@@ -7,3 +7,10 @@ mat-slider {
 }
 
 
+:host .mat-button-toggle-group{
+  border-radius: 0px !important;
+}
+
+:host .mat-flat-button{
+  border-radius: 0px !important;
+}
