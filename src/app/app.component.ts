@@ -34,7 +34,8 @@ export class AppComponent implements OnInit{
   autoTicks = false;
   disabled = false;
   invert = false;
-  maxUsers = 1000000;
+  maxUsersIndia = 400000;
+  maxUsersUS = 1000000;
   maxSlots = 30;
   min = 1;
   minUsers = 50;
@@ -159,9 +160,16 @@ export class AppComponent implements OnInit{
   }
 
   somethingChanged() {
-    if(this.registeredUsers > 1000000) {
-      this.registeredUsers = 1000000;
+    if(this.activeCountry === 'US') {
+      if(this.registeredUsers > 1000000) {
+        this.registeredUsers = 1000000;
+      }
+    } else if(this.activeCountry === 'India') {
+      if(this.registeredUsers > 400000) {
+        this.registeredUsers = 400000;
+      }
     }
+
     if(this.registeredUsers < 50) {
       this.registeredUsers = 50;
     }
@@ -185,10 +193,10 @@ export class AppComponent implements OnInit{
     let maxGross: number;
     if(this.activeCountry == 'US') {
       grossEarningsCurrency = new Intl.NumberFormat('en-US').format(grossEarnings);
-      maxGross = 350 * 1440 * 0.9 * 10.8 * 1 * this.maxUsers / 1000;
+      maxGross = 350 * 1440 * 0.9 * 10.8 * 1 * this.maxUsersUS / 1000;
     } else {
       grossEarningsCurrency = new Intl.NumberFormat('en-IN').format(grossEarnings);      
-      maxGross = 400 * 1440 * 0.9 * 10.8 * 1 * this.maxUsers / 1000;
+      maxGross = 400 * 1440 * 0.9 * 10.8 * 1 * this.maxUsersIndia / 1000;
     }
     this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
     this.circularValue = (grossEarnings / maxGross) * 100 ;

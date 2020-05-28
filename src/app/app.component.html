@@ -53,7 +53,7 @@
 </div>
 
 
-<div class="w100 mb30">
+<div class="w100 mb30" *ngIf="activeCountry == 'India'">
   <span>
     Total number of registered users on your platform?
   </span>
@@ -71,7 +71,7 @@
   class="example-margin"
   [disabled]="disabled"
   [invert]="invert"
-  [max]="maxUsers"
+  [max]="maxUsersIndia"
   [min]="minUsers"
   [step]="stepUsers"
   [tickInterval]="getSliderTickInterval()"
@@ -82,6 +82,34 @@
 </mat-slider>          
 </div>
 
+<div class="w100 mb30" *ngIf="activeCountry == 'US'">
+  <span>
+    Total number of registered users on your platform?
+  </span>
+  <div fxLayout="column" fxLayoutAlign=" start" >
+    <span *ngIf="!editingUsers">
+      <span >{{registeredUsers}}</span>
+      <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()">
+        <mat-icon class="size-16" svgIcon="unicorn_edit_icon"></mat-icon>
+      </button>
+    </span>
+    
+    <input id="userInputElement" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
+  </div>
+  <mat-slider color="primary" style="width: 535px;right: 16px;"
+  class="example-margin"
+  [disabled]="disabled"
+  [invert]="invert"
+  [max]="maxUsersUS"
+  [min]="minUsers"
+  [step]="stepUsers"
+  [tickInterval]="getSliderTickInterval()"
+  (input)="registeredUsers = $event.value"
+  [value]="registeredUsers"
+  [vertical]="vertical" (change)="somethingChanged()">
+ 
+</mat-slider>          
+</div>
 
 <div class="w100 mb30">
   <span>
