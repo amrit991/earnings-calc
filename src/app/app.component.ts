@@ -3,6 +3,8 @@ import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import { DOCUMENT } from '@angular/common'; 
+import { Inject }  from '@angular/core';
 
 interface platform {
   value: string;
@@ -21,7 +23,8 @@ interface country {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer){
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer,
+    @Inject(DOCUMENT) document){
     this.matIconRegistry.addSvgIcon(
       `unicorn_edit_icon`,
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/Earning\ Calculator\ -03.svg")

@@ -21,10 +21,12 @@ import {ThemePalette} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HttpClientModule } from "@angular/common/http";
+import { AutofocusDirective } from './autofocus.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AutofocusDirective
   ],
   imports: [
     BrowserModule,
