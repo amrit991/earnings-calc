@@ -19,18 +19,26 @@
   </mat-button-toggle-group>
 </div></div>
 
-<div class="w50 right mb30">    <div class="item">
-  <span>Is your platform more speciality focussed?</span>
-  <br/>
-  <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="specialityFocussed"
-  value="Yes" (change)="somethingChanged()" style="margin-top: 10px;">
-    <mat-button-toggle color="primary" value="Yes">Yes
-    </mat-button-toggle>
-    <mat-button-toggle color="primary" value="No">No
-    </mat-button-toggle>
-  </mat-button-toggle-group>
+<div class="w50 right mb30">    
 
-</div>  </div>
+  <span>
+    What percentage of Physicians are specialists?
+  </span>
+  <div fxLayout="column" fxLayoutAlign=" start" >
+    <p style="float: inline-start;">{{specialityFocussed}} %</p>
+  </div>
+  <mat-slider color="primary" style="width: 252px;right: 16px;"
+  class="arrow-down"
+    class="example-margin"
+    [disabled]="disabled"
+    [invert]="invert"
+    [max]="maxSpeciality"
+    [min]="minSpeciality"
+    [tickInterval]="getSliderTickInterval()"
+    (input)="specialityFocussed = $event.value" 
+    [value]="specialityFocussed" (change)="somethingChanged()">
+  </mat-slider> 
+</div>
 
 <div class="w100 mb30">
   <span>What's the type of your physician platform?</span>

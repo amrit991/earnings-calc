@@ -35,6 +35,9 @@ export class AppComponent implements OnInit{
   maxSlots = 10;
   min = 1;
   minUsers = 50;
+  minSpeciality = 1;
+  maxSpeciality = 100;
+  stepSpeciality = 1;
   showTicks = false;
   step = 1;
   stepUsers = 50;
@@ -54,7 +57,7 @@ export class AppComponent implements OnInit{
     US: '$',
     India: '₹'
   };
-  specialityFocussed: string = 'Yes';
+  specialityFocussed: number = 37;
   activeCountry: string = 'India';
 
   platforms: platform[] = [
@@ -137,7 +140,7 @@ export class AppComponent implements OnInit{
                         (this.platformData[this.selectedPlatform].avgImp) * 
                         (this.platformData[this.selectedPlatform].platformMultiplier) * 
                         (this.slotMultiplier[this.totalSlots]) * 
-                        (this.specialityMultiplier[this.specialityFocussed]) * 
+                        (this.specialityFocussed / 100) * 
                         (this.registeredUsers)) / 1000;
     grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100
     let grossEarningsCurrency: string;
