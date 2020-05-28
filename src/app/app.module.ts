@@ -22,11 +22,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HttpClientModule } from "@angular/common/http";
 import { AutofocusDirective } from './autofocus.directive';
+import { OnlyNumberDirective } from './only-number.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AutofocusDirective
+    AutofocusDirective,
+    OnlyNumberDirective
   ],
   imports: [
     BrowserModule,

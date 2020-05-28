@@ -65,7 +65,7 @@
       </button>
     </span>
     
-    <input id="userInputElement" appAutofocus *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
+    <input id="userInputElement" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
   </div>
   <mat-slider color="primary" style="width: 535px;right: 16px;"
   class="example-margin"

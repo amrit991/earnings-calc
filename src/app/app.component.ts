@@ -159,6 +159,12 @@ export class AppComponent implements OnInit{
   }
 
   somethingChanged() {
+    if(this.registeredUsers > 1000000) {
+      this.registeredUsers = 1000000;
+    }
+    if(this.registeredUsers < 50) {
+      this.registeredUsers = 50;
+    }
     let grossEarnings = ((this.countryData[this.activeCountry].avgCpm) * 
                         (this.platformData[this.selectedPlatform].avgImp) * 
                         (this.platformData[this.selectedPlatform].platformMultiplier) * 
