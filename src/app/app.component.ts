@@ -32,7 +32,7 @@ export class AppComponent implements OnInit{
   disabled = false;
   invert = false;
   maxUsers = 1000000;
-  maxSlots = 10;
+  maxSlots = 30;
   min = 1;
   minUsers = 50;
   minSpeciality = 1;
@@ -98,21 +98,41 @@ export class AppComponent implements OnInit{
   };
 
   specialityMultiplier = {
-    Yes: 1,
-    No: 0.6
+    'specialist': 1,
+    'nonSpecialist': 0.6
   };
 
   slotMultiplier = {
     1: 1.00,
     2: 1.80,
-    3: 2.44,
-    4: 2.95,
-    5: 3.36,
-    6: 3.69,
-    7: 3.95,
-    8: 4.16,
-    9: 4.33,
-    10: 4.46
+    3: 2.55,
+    4: 3.25,
+    5: 3.85,
+    6: 4.35,
+    7: 4.75,
+    8: 5.15,
+    9: 5.50,
+    10: 5.80,
+    11: 6.05,
+    12: 6.30,
+    13: 6.55,
+    14: 6.80,
+    15: 7.05,
+    16: 7.30,
+    17: 7.55,
+    18: 7.80,
+    19: 8.05,
+    20: 8.30,
+    21: 8.55,
+    22: 8.80,
+    23: 9.05,
+    24: 9.30,
+    25: 9.55,
+    26: 9.80,
+    27: 10.05,
+    28: 10.30,
+    29: 10.55,
+    30: 10.80
   };
 
   ngOnInit() {
@@ -140,17 +160,26 @@ export class AppComponent implements OnInit{
                         (this.platformData[this.selectedPlatform].avgImp) * 
                         (this.platformData[this.selectedPlatform].platformMultiplier) * 
                         (this.slotMultiplier[this.totalSlots]) * 
-                        (this.specialityFocussed / 100) * 
                         (this.registeredUsers)) / 1000;
-    grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100
+
+    console.log(this.specialityFocussed);
+    console.log(100 - this.specialityFocussed);
+    let specialists = this.specialityFocussed;
+    let nonSpecialists = 100 - specialists;
+    console.log('grossEarnings before spec: ', grossEarnings);
+    grossEarnings = ( ((grossEarnings * specialists) / 100) * this.specialityMultiplier.specialist) + 
+                    ( ((grossEarnings * nonSpecialists) / 100) * this.specialityMultiplier.nonSpecialist);
+    console.log('grossEarnings after spec: ', grossEarnings);
+    grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100;
+    
     let grossEarningsCurrency: string;
     let maxGross: number;
     if(this.activeCountry == 'US') {
       grossEarningsCurrency = new Intl.NumberFormat('en-US').format(grossEarnings);
-      maxGross = 350 * 1440 * 0.9 * 4.46 * 1 * this.maxUsers / 1000;
+      maxGross = 350 * 1440 * 0.9 * 10.8 * 1 * this.maxUsers / 1000;
     } else {
       grossEarningsCurrency = new Intl.NumberFormat('en-IN').format(grossEarnings);      
-      maxGross = 400 * 1440 * 0.9 * 4.46 * 1 * this.maxUsers / 1000;
+      maxGross = 400 * 1440 * 0.9 * 10.8 * 1 * this.maxUsers / 1000;
     }
     this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
     this.circularValue = (grossEarnings / maxGross) * 100 ;
