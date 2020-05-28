@@ -3,8 +3,9 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-button-toggle.cdk-mouse-focused {
-    background: #16C0F0;
-    border-radius: 0px !important;
+    background: #4e70ef;
+    background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+    border-radius: 0px !important; color: #ffffff !important;
     }
 
 .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
@@ -12,27 +13,41 @@ mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-
     padding: 0 22px !important;
 }
 
+.circle-progress{ background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+    border-radius: 0px !important; font-weight: bold;}
+
 
 .mat-slider-thumb-label {
     transform: rotate(0deg) !important;
-    border-radius: 0% 0% 0% 0% !important;
+   border-radius: 0% 0% 0% 0% !important;
     padding: 0px 15px;
     margin-top: 25px;
     margin-left: 10px;
-    right: -32px !important;
-    top: -40px !important;
-    background-color: #16C0F0 !important;
+    right: -28px !important;
+    top: -80px !important;
+    background-image: url('./assets/images/icon_1.png');background-size: cover;
+    height: 35px !important;
+    background-color: transparent !important;
+   // background: url("./assets/Images/icon_1.png") no-repeat center center fixed;
+
+    //background-image:url('./assets/images/icon_1.png') no-repeat!important;}
+    //background-image: url('assets/images/icon_1.png');
+   // background: #4e70ef;
+   // background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important; 
   }
 
   .mat-slider-thumb {
-      transform: scale(0) !important;
+      //transform: scale(10) !important;
+      width: 10px; height: 10px; border-radius: 10px; background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+      border-radius: 10px !important; border: none !important;
   }
   
   .mat-slider-thumb-label-text {
       opacity: 1 !important;
-      transform: rotate(0deg) !important;
+      transform: rotate(0deg) !important; position: relative; top: -3px;
   }
     .mat-slider-thumb-container {
         transition: all 0.3s ease-in-out;
     }
+   
 

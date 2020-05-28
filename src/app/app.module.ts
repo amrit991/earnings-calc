@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import {ThemePalette} from '@angular/material/core';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     MatButtonToggleModule,
     FlexLayoutModule,
     MatProgressSpinnerModule,
+    MatIconModule,
+    HttpClientModule,
     NgCircleProgressModule.forRoot({
       "radius": 60,
       "space": -10,

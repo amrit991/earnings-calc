@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
 import {ProgressSpinnerMode} from '@angular/material/progress-spinner';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 interface platform {
   value: string;
@@ -19,6 +21,12 @@ interface country {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer){
+    this.matIconRegistry.addSvgIcon(
+      `unicorn_edit_icon`,
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/Earning\ Calculator\ -03.svg")
+    );
+  }
   title = 'earnings-calc';
   autoTicks = false;
   disabled = false;
@@ -36,6 +44,7 @@ export class AppComponent implements OnInit{
   totalSlots = 1;
   vertical = false;
   tickInterval = 1;
+  editingUsers = false;
   selectedPlatform: string = 'Electronic Health Record';
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'determinate';
@@ -115,6 +124,14 @@ export class AppComponent implements OnInit{
     return 0;
   }
 
+  enableUserEditMode() {
+    this.editingUsers = true;
+  }
+
+  disableUserEditMode() {
+    this.editingUsers = false;
+  }
+
   somethingChanged() {
     let grossEarnings = ((this.countryData[this.activeCountry].avgCpm) * 
                         (this.platformData[this.selectedPlatform].avgImp) * 
@@ -135,5 +152,5 @@ export class AppComponent implements OnInit{
     this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
     this.circularValue = (grossEarnings / maxGross) * 100 ;
   }
-
+  
 }
