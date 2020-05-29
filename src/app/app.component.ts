@@ -74,7 +74,7 @@ export class AppComponent implements OnInit{
   countryData = {
     India: {
       currency: '₹',
-      avgCpm: 400
+      avgCpm: 500
     },
     US: {
       currency: '$',
@@ -84,19 +84,19 @@ export class AppComponent implements OnInit{
 // avgImp is per user per year
   platformData = {
     'Electronic Health Record': {
-      avgImp: 1440,
+      avgImp: 9600,
       platformMultiplier: 0.9
     },
     'Physician Networking': {
-      avgImp: 480,
+      avgImp: 576,
       platformMultiplier: 0.3
     },
     'Medical Journal': {
-      avgImp: 720,
+      avgImp: 768,
       platformMultiplier: 0.5
     },
     'Telemedicine': {
-      avgImp: 960,
+      avgImp: 1920,
       platformMultiplier: 0.6
     },
   };
@@ -173,6 +173,14 @@ export class AppComponent implements OnInit{
     if(this.registeredUsers < 50) {
       this.registeredUsers = 50;
     }
+
+    console.log('this.activeCountry: ' ,this.activeCountry);
+    console.log('this.registeredUsers: ' ,this.registeredUsers)
+    console.log('this.avgCpm: ' ,this.countryData[this.activeCountry].avgCpm)
+    console.log('this.avgImp: ' ,this.platformData[this.selectedPlatform].avgImp)
+    console.log(this.selectedPlatform, ' - this.platformMultiplier: ' ,this.platformData[this.selectedPlatform].platformMultiplier)
+    console.log('this.slotMultiplier: ' ,this.slotMultiplier[this.totalSlots])
+
     let grossEarnings = ((this.countryData[this.activeCountry].avgCpm) * 
                         (this.platformData[this.selectedPlatform].avgImp) * 
                         (this.platformData[this.selectedPlatform].platformMultiplier) * 
@@ -193,10 +201,10 @@ export class AppComponent implements OnInit{
     let maxGross: number;
     if(this.activeCountry == 'US') {
       grossEarningsCurrency = new Intl.NumberFormat('en-US').format(grossEarnings);
-      maxGross = 350 * 1440 * 0.9 * 10.8 * 1 * this.maxUsersUS / 1000;
+      maxGross = 350 * 9600 * 0.9 * 10.8 * 1 * this.maxUsersUS / 1000;
     } else {
       grossEarningsCurrency = new Intl.NumberFormat('en-IN').format(grossEarnings);      
-      maxGross = 400 * 1440 * 0.9 * 10.8 * 1 * this.maxUsersIndia / 1000;
+      maxGross = 500 * 9600 * 0.9 * 10.8 * 1 * this.maxUsersIndia / 1000;
     }
     this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
     this.circularValue = (grossEarnings / maxGross) * 100 ;
