@@ -196,7 +196,7 @@ export class AppComponent implements OnInit{
       maxGross = 500 * 9600 * 0.9 * 10.8 * 1 * this.maxUsersIndia / 1000;
       maxGross = Math.round(maxGross);
     }
-    this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
+    this.circularTitle = this.countryData[this.activeCountry].currency + grossEarningsCurrency;
     this.circularValue = (grossEarnings / maxGross) * 100 ;
   }
   
