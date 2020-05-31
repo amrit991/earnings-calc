@@ -7,7 +7,7 @@
 
 
   <div class="mobile" style="text-align: center;">
-    <circle-progress
+    <circle-progress style="font-family: 'Work Sans', sans-serif;"
     [percent]="circularValue"
     [outerStrokeWidth]="14"
     [showSubtitle] = "showSubtitle"
@@ -16,18 +16,7 @@
     [animation]="true"
     outerStrokeLinecap = "square"
     clockwise= "false"
-    lazy= "false"
-    unitsColor= "#4778EF"
-    outerStrokeColor= "#16C0F0"
-    [animationDuration]="169"
-    titleColor= "#16C0F0"
-    titleFontSize = "28"
-    unitsFontSize = "14"
-    titleFontWeight = "900"
-    unitsFontWeight = "900"
-    subtitleFontSize = "28"
-    subtitleFontWeight = "900"
-    titleColor = "#4678df"
+    [subtitleFormat]="formatSubtitle"
   ></circle-progress>
   </div>
   <div style="text-align: center;" class="mb30 mobile"> 
@@ -91,16 +80,16 @@
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
     <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
-      <span class="input_text">{{registeredUsers}}</span>
+      <span class="input_text">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()" style="position: relative; top: -6px; z-index: 999;">
-        <mat-icon class="size-16" svgIcon="unicorn_edit_icon"></mat-icon>
+        <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
     </span>
    
     <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;">
   </div>
   
-  <mat-slider color="primary" class="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
+  <mat-slider color="primary" id="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
   class=" w100"
   
   [disabled]="disabled"
@@ -128,7 +117,7 @@
   </span>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
     <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
-      <span class="input_text">{{registeredUsers}}</span>
+      <span class="input_text">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()"  style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
@@ -137,7 +126,7 @@
     <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
   </div>
   
-  <mat-slider color="primary"  class="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
+  <mat-slider color="primary"  id="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
   class="w100"
   [disabled]="disabled"
   [invert]="invert"
@@ -188,12 +177,14 @@
     [outerStrokeWidth]="14"
     [showSubtitle] = "showSubtitle"
     [title]= "circularTitle"
+    [subtitleFormat]="formatSubtitle" 
     [innerStrokeWidth]="7"
     [animation]="true"
     outerStrokeLinecap = "square"
     clockwise= "false"
     lazy= "false"
     unitsColor= "#4778EF"
+    class="placingCircle"
     outerStrokeColor= "#16C0F0"
     [animationDuration]="169"
     titleColor= "#16C0F0"
@@ -206,8 +197,7 @@
   ></circle-progress>
   </div>
   <div class="desktop" style="    margin-top: -20px;">
-    <p style="font-weight: bold; font-size: 16px; font-weight: 600; color: #1d2733; margin-bottom: 20px;
-">
+    <p style="font-weight: bold; font-size: 16px; font-weight: 600; color: #1d2733; margin-bottom: 20px;">
       Estimated annual earnings*
     </p>
   </div>
@@ -216,14 +206,14 @@
   </div>
 </div>
 
-<div class="list_33 mb30" style="width: 362px;">
-  <p class="fs9 pm0" style="color: #6d7783;"><strong>*Please note that the earnings are based on assumptions, like:</strong></p>
+<div class="list_33 mb30" style="width: 362px;margin-top: 16px;">
+  <p class="fs9 pm0" style="color: #6d7783;margin-bottom: 8px;"><strong>*Please note that the earnings are based on assumptions, like:</strong></p>
 <ul>
 <li>Average time spent by monthly users on your platforms is same</li>
 <li>Fill-rates of 100%</li>
 <li>Ad slot viewability of >70%</li>
 <li>Specialties on your platform are most targeted ones by advertisers </li>
-<p class="fs9 pm0" style="color: #6d7783;margin-left: -12px;">Hence, your actual earnings might vary from the results you get here</p>
+<p class="fs9 pm0" style="color: #6d7783;margin-left: -12px;margin-top: 8px;">Hence, your actual earnings might vary from the results you get here</p>
 
 </ul>
 
