@@ -1,6 +1,7 @@
 .example-margin {
   margin: 0 10px; 
 }
+
 span{ font-family: 'Work sans'; }
 .arrow-down {
   width: 0px;
@@ -16,16 +17,16 @@ mat-slider {
   border-radius: 0px !important; color: #ffffff !important;}
 
 :host .mat-button-toggle-group{
-  border-radius: 0px !important;
+  border-radius: 4px !important; font-family: 'Work sans';
 }
-
+label{ font-family: 'Work sans';}
 :host .mat-flat-button{
   border-radius: 0px !important;
 }
 
 .size-16{
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   transform: scale(1);
 }
 /*
@@ -46,13 +47,30 @@ p{font-size: 15px;
   font-weight: 400;
   color: #6d7783; font-family: 'Work sans'; text-align: center;}
   .w45{ width: 45%;}
+  .w40{ width: 40%;}
   .w50{ width: 50%;}
-  .w60{ width: 70%;}
+  .w52{ width: 52%;}
+  .w60{ width: 62%;}
   .w30{ width: 30%;}
   .w100{ width: 100%;}
   .left{ float: left;}
   .right{ float: right;}
   .clear{ clear: both;}
-  .main{ width: 900px; margin: auto;    box-shadow: 0 0 10px #cbcbcb;
-    border-radius: 10px; padding: 50px 100px; margin-top: 50px; margin-bottom: 50px;}
+  .main{ width: 1000px; margin: auto;    box-shadow: 0 0 10px #cbcbcb;
+    border-radius: 10px; padding: 50px ; margin-top: 50px; margin-bottom: 50px;}
     .mb30{ margin-bottom: 40px;}
+.clear{ clear: both;}
+.slider_1{position: relative;top: -14px;padding: 0px !important;}
+.slider_text{margin: 0px !important;  font-size: 20px;  font-weight: 600;  color: #4976ed;
+  /* margin-left: 40px; */
+  padding-left: 18px;  padding-top: 0px;  /* margin-top: 14px !important; */
+  position: relative;  top: 5px;}
+  .input_text{ font-size: 20px; font-family: 'Work sans'; font-weight: 600; color: #4976ed;}
+  .input_2{ border: none !important; font-family: 'Work snns';}
+  .list_33{}
+  .list_33 ul{ padding: 0px; margin: 0px 0px 0px 10px ; list-style: none;}
+  .list_33 ul li{font-size: 9px;line-height: 14px; font-family: 'Work sans'; color: #6d7783; list-style: decimal;}
+  .fs9{text-align: left; font-size:9px; line-height: 12px; font-weight: 600; }
+  .pm0{ padding: 0px; margin: 0px;}
+
+  input{ border: none !important;}

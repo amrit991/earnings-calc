@@ -2,13 +2,13 @@
   <h2 class="heading3">
     Earnings Calculator
  </h2>
-<p class="mb30">Our Earnings Calculator predicts how much a digital platform may earn with our Doceree Publisher program.
-  It is built on anonymized published data to calculate estimated annual earnings.</p>
+<p style="margin-bottom: 60px;">Our Earnings Calculator predicts how much a digital platform may earn with our Doceree Publisher program.
+  <br>It is built on anonymized published data to calculate estimated annual earnings.</p>
 
 
   <div class="w60 left">
-<div class="w50 left mb30"> <div class="item">
-  <span>Where are your physician users from?</span>
+<div class="w45 left mb30"> <div class="item">
+  <label>Where are your physician users from?</label>
   <br/>
   <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" 
   value="US" (change)="somethingChanged()" style="margin-top: 10px;">
@@ -19,17 +19,16 @@
   </mat-button-toggle-group>
 </div></div>
 
-<div class="w50 right mb30">    
+<div class="w52 right" style="margin-bottom: 25px;">    
 
-  <span>
+  <label>
     What percentage of Physicians are specialists?
-  </span>
+  </label>
   <div fxLayout="column" fxLayoutAlign=" start" >
-    <p style="float: inline-start;">{{specialityFocussed}} %</p>
+    <p  class="slider_text">{{specialityFocussed}} %</p>
   </div>
-  <mat-slider color="primary" style="width: 252px;right: 16px;"
-  class="arrow-down"
-    class="example-margin"
+  <mat-slider color="primary" 
+    class=" w100 slider_1"
     [disabled]="disabled"
     [invert]="invert"
     [max]="maxSpeciality"
@@ -37,13 +36,16 @@
     [tickInterval]="getSliderTickInterval()"
     (input)="specialityFocussed = $event.value" 
     [value]="specialityFocussed" (change)="somethingChanged()">
-  </mat-slider> 
+  </mat-slider>
+<div style="position: relative; top: -30px;"><div class="30 left"><span>0%</span></div>
+<div class="30 right"><span>100%</span></div></div>
 </div>
+<div class="clear"></div>
 
 <div class="w100 mb30">
   <span>What's the type of your physician platform?</span>
   <br/>
-  <mat-form-field style="width: 520px;">
+  <mat-form-field class="w100">
     <mat-select [(ngModel)]="selectedPlatform" [(value)]="selectedPlatform" name="platform" (selectionChange)="somethingChanged()">
       <mat-option *ngFor="let platform of platforms" [value]="platform.value">
         {{platform.viewValue}}
@@ -53,22 +55,24 @@
 </div>
 
 
-<div class="w100 mb30" *ngIf="activeCountry == 'India'">
-  <span>
-    Total number of registered users on your platform?
-  </span>
-  <div fxLayout="column" fxLayoutAlign=" start" >
-    <span *ngIf="!editingUsers">
-      <span >{{registeredUsers}}</span>
-      <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()">
+<div class="w100" *ngIf="activeCountry == 'India'" style="margin-bottom: 36px;">
+  <label>
+    Total number of registered users on your platform? 
+  </label>
+  <div fxLayout="column" fxLayoutAlign=" start" class="inputbox combined" >
+    <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
+      <span class="input_text">{{registeredUsers}}</span>
+      <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()" style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
     </span>
-    
-    <input id="userInputElement" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
+   
+    <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;">
   </div>
-  <mat-slider color="primary" style="width: 535px;right: 16px;"
-  class="example-margin"
+  
+  <mat-slider color="primary" style="position: relative; top: -25px; margin: 0px;"
+  class=" w100"
+  
   [disabled]="disabled"
   [invert]="invert"
   [max]="maxUsersIndia"
@@ -79,25 +83,32 @@
   [value]="registeredUsers"
   [vertical]="vertical" (change)="somethingChanged()">
  
-</mat-slider>          
+</mat-slider> 
+
+<div style="position: relative; top: -40px;"><div class="30 left"><span>50</span></div>
+<div class="30 right"><span>4 Lakhs</span></div></div>
+
+
+
 </div>
 
-<div class="w100 mb30" *ngIf="activeCountry == 'US'">
+<div class="w100" *ngIf="activeCountry == 'US'" style="margin-bottom: 36px;">
   <span>
     Total number of registered users on your platform?
   </span>
-  <div fxLayout="column" fxLayoutAlign=" start" >
-    <span *ngIf="!editingUsers">
-      <span >{{registeredUsers}}</span>
-      <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()">
+  <div fxLayout="column" fxLayoutAlign=" start" class="inputbox combined" >
+    <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
+      <span class="input_text">{{registeredUsers}}</span>
+      <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()"  style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
     </span>
     
-    <input id="userInputElement" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
+    <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
   </div>
-  <mat-slider color="primary" style="width: 535px;right: 16px;"
-  class="example-margin"
+  
+  <mat-slider color="primary"  style="position: relative; top: -25px; margin: 0px;"
+  class="w100"
   [disabled]="disabled"
   [invert]="invert"
   [max]="maxUsersUS"
@@ -108,19 +119,23 @@
   [value]="registeredUsers"
   [vertical]="vertical" (change)="somethingChanged()">
  
-</mat-slider>          
+</mat-slider>  
+<div style="position: relative; top: -40px;"><div class="30 left"><span>50</span></div>
+<div class="30 right"><span>1 million</span></div></div>        
 </div>
 
+<div class="clear"></div>
+
+
 <div class="w100 mb30">
-  <span>
-    Number of Ad slots to be registered?
-  </span>
+  <label>
+    Total number of Ad slots to be registered?
+  </label>
   <div fxLayout="column" fxLayoutAlign=" start" >
-    <p style="float: inline-start;">{{totalSlots}}</p>
+    <p style="float: inline-start;"class="slider_text">{{totalSlots}}</p>
   </div>
-  <mat-slider color="primary" style="width: 535px;right: 16px;"
-  class="arrow-down"
-    class="example-margin"
+  <mat-slider color="primary" style="position: relative; top: -13px;" 
+    class=" w100"
     [disabled]="disabled"
     [invert]="invert"
     [max]="maxSlots"
@@ -129,23 +144,18 @@
     (input)="totalSlots = $event.value" 
     [value]="totalSlots" (change)="somethingChanged()">
   </mat-slider> 
+  <div style="position: relative; top: -27px;"><div class="30 left"><span>1</span></div>
+<div class="30 right"><span>30</span></div></div>
 </div>
 
 
-<div >
-  <p style="text-align: left; font-size:9px; line-height: 12px;">
-    *Disclaimer: Doceree makes no guarantee in the individual performance or earning estimation. 
-    Every publisher website is different, with variables such as design, audience geography, content, domain, reputation, 
-    impressions, ad sizes, ad placement all contributing and effecting sell through rates and revenue.
-  </p>
-</div>
 
   </div>
-<div class="w30 right" style="margin-top: 40px;"><div fxLayout="column" fxLayoutAlign="space-around center" >
+<div class="w30 right"><div fxLayout="column" fxLayoutAlign="space-around center" >
   <div >
     <circle-progress
     [percent]="circularValue"
-    [radius]="110"
+    [radius]="100"
     [outerStrokeWidth]="14"
     [showSubtitle] = "showSubtitle"
     [title]= "circularTitle"
@@ -157,7 +167,13 @@
     unitsColor= "#4778EF"
     outerStrokeColor= "#16C0F0"
     [animationDuration]="169"
-    titleColor= "#16C0F0" 
+    titleColor= "#16C0F0"
+    titleFontSize = 26
+    unitsFontSize = 13
+    titleFontWeight = 900
+    unitsFontWeight = 900
+    subtitleFontWeight = 400
+    titleColor = #4678df
   ></circle-progress>
   </div>
   <div>
@@ -165,11 +181,35 @@
       Estimated annual earnings*
     </p>
   </div>
-  <div>
-    <button mat-flat-button color="primary" class="button">Discover more</button>
+  <div class="mb30">
+    <button mat-flat-button color="primary" class="button">Schedule a demo</button>
   </div>
-</div></div>
+</div>
+
+<div class="list_33 mb30">
+  <p class="fs9 pm0" style="color: #6d7783;"><strong>*Please note that the earnings are based on assumptions, like-</strong></p>
+<ul>
+<li>Average time spent by monthly users on your platforms is same</li>
+<li>Fill-rates of 100%</li>
+<li>Ad slot viewability of>70%</li>
+<li>Specialties on your platform are most targeted ones by advertisers </li>
+<p class="fs9 pm0" style="color: #6d7783;">Hence, your actual earnings might vary from the results you get here</p>
+
+</ul>
+
+</div>
+</div>
 
 <div style="clear: both;"></div>
+
+<div >
+  <p style="text-align: left; font-size:9px; line-height: 12px;">
+    *Disclaimer: Doceree makes no guarantee in the individual performance or earning estimation. 
+    Every publisher website is different, with variables such as design, audience geography, content, domain, reputation, 
+    impressions, ad sizes, ad placement all contributing and effecting sell through rates and revenue.
+  </p>
 </div>
+</div>
+
+<input type="text" value="test" style="border: none !important;">
 

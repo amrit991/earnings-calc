@@ -1,6 +1,6 @@
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Work sans' !important; }
 
 mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-button-toggle.cdk-mouse-focused {
     background: #4e70ef;
@@ -10,7 +10,7 @@ mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-
 
 .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
     line-height: 28px !important;
-    padding: 0 22px !important;
+    padding: 0 22px !important; font-family: 'Work sans';
 }
 
 .circle-progress{ background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
@@ -49,5 +49,40 @@ mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-
     .mat-slider-thumb-container {
         transition: all 0.3s ease-in-out;
     }
-   
+    .mat-select-trigger{display: inline-table;
+        cursor: pointer;
+        position: relative;
+        box-sizing: border-box;
+        border: 1px solid #e0e0e0;
+        padding: 7px 15px;
+        border-radius: 4px; font-family: 'Work sans'; margin-top: 5px;} 
+        .mat-select-arrow{width: 0;height: 0;border-left: 9px solid transparent !important;
+            border-right: 7px solid transparent !important;border-top: 8px solid !important;margin: 0px 7px;}
+        .inputbox{ border: 1px solid #e0e0e0;padding: 7px 15px;
+            border-radius: 4px; font-family: 'Work sans' !important; margin-top: 5px; height: 34px;} 
+            .mat-select-arrow{ color: #2aa2f0 !important;}
 
+            //.mat-slider-horizontal .mat-slider-track-wrapper{ border: 1px solid #000000 !important; background: #ccc !important;}
+            //.mat-slider-horizontal .mat-slider-wrapper{}
+            //.mat-slider-ticks{ border: 1px solid #000000;}
+
+
+            .mat-slide.mat-checked .mat-slide-bar {
+                background-color:#0056ff;//Your color
+            }
+            .mat-slide.mat-checked .mat-slide-thumb {
+                background-color: #0056ff;//Your color
+            }
+              ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+                border: none !important
+              }
+
+              .mat-form-field-appearance-legacy .mat-form-field-underline {
+                height: 1px;
+                display: none;
+            }
+
+            .mat-slider-horizontal .mat-slider-ticks {
+                background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
+                background-image: -moz-repeating-linear-gradient(0.0001deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
+            }
