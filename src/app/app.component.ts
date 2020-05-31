@@ -174,29 +174,17 @@ export class AppComponent implements OnInit{
       this.registeredUsers = 50;
     }
 
-    console.log('this.activeCountry: ' ,this.activeCountry);
-    console.log('this.registeredUsers: ' ,this.registeredUsers)
-    console.log('this.avgCpm: ' ,this.countryData[this.activeCountry].avgCpm)
-    console.log('this.avgImp: ' ,this.platformData[this.selectedPlatform].avgImp)
-    console.log(this.selectedPlatform, ' - this.platformMultiplier: ' ,this.platformData[this.selectedPlatform].platformMultiplier)
-    console.log('this.slotMultiplier: ' ,this.slotMultiplier[this.totalSlots])
-
     let grossEarnings = ((this.countryData[this.activeCountry].avgCpm) * 
                         (this.platformData[this.selectedPlatform].avgImp) * 
                         (this.platformData[this.selectedPlatform].platformMultiplier) * 
                         (this.slotMultiplier[this.totalSlots]) * 
                         (this.registeredUsers)) / 1000;
-
-    console.log(this.specialityFocussed);
-    console.log(100 - this.specialityFocussed);
     let specialists = this.specialityFocussed;
     let nonSpecialists = 100 - specialists;
-    console.log('grossEarnings before spec: ', grossEarnings);
     grossEarnings = ( ((grossEarnings * specialists) / 100) * this.specialityMultiplier.specialist) + 
                     ( ((grossEarnings * nonSpecialists) / 100) * this.specialityMultiplier.nonSpecialist);
-    console.log('grossEarnings after spec: ', grossEarnings);
     grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100;
-    
+    grossEarnings = Math.round(grossEarnings);
     let grossEarningsCurrency: string;
     let maxGross: number;
     if(this.activeCountry == 'US') {
