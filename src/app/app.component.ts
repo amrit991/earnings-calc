@@ -190,9 +190,11 @@ export class AppComponent implements OnInit{
     if(this.activeCountry == 'US') {
       grossEarningsCurrency = new Intl.NumberFormat('en-US').format(grossEarnings);
       maxGross = 350 * 9600 * 0.9 * 10.8 * 1 * this.maxUsersUS / 1000;
+      maxGross = Math.round(maxGross);
     } else {
       grossEarningsCurrency = new Intl.NumberFormat('en-IN').format(grossEarnings);      
       maxGross = 500 * 9600 * 0.9 * 10.8 * 1 * this.maxUsersIndia / 1000;
+      maxGross = Math.round(maxGross);
     }
     this.circularTitle = this.countryData[this.activeCountry].currency + ' ' + grossEarningsCurrency;
     this.circularValue = (grossEarnings / maxGross) * 100 ;

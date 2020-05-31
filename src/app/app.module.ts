@@ -51,7 +51,7 @@ import { OnlyNumberDirective } from './only-number.directive';
     MatIconModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot({
-      "radius": 110,
+      "radius": 115,
       "space": -10,
       "outerStrokeGradient": true,
       "outerStrokeWidth": 10,
