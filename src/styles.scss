@@ -10,6 +10,27 @@ body {
   color: #414143;
 }
 
+.mat-option-text {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  color: #414143;
+}
+
+.mat-select-value-text {
+  margin: 0 !important;
+  font-family: 'Work Sans', sans-serif !important;
+  font-size: 14px !important;
+  color: #414143 !important;
+}
+
+.mat-button-toggle-label-content {
+  margin: 0 !important;
+  font-family: 'Work Sans', sans-serif !important;
+  font-size: 14px !important;
+  color: #414143 !important;
+}
+
 mat-button-toggle.mat-button-toggle-checked,
 mat-button-toggle.cdk-focused,
 mat-button-toggle.cdk-mouse-focused {
