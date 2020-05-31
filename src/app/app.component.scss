@@ -2,7 +2,7 @@
   margin: 0 10px; 
 }
 
-span{ font-family: 'Work sans'; }
+span{ font-size: 14px;}
 .arrow-down {
   width: 0px;
   height: 0px;
@@ -16,10 +16,15 @@ mat-slider {
 .button{ background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
   border-radius: 0px !important; color: #ffffff !important;}
 
-:host .mat-button-toggle-group{
-  border-radius: 4px !important; font-family: 'Work sans';
+.a{
+  background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+  border-radius: 0px !important; color: #ffffff !important;
 }
-label{ font-family: 'Work sans';}
+
+:host .mat-button-toggle-group{
+  border-radius: 4px !important; 
+}
+label{ font-size: 14px; }
 :host .mat-flat-button{
   border-radius: 0px !important;
 }
@@ -33,7 +38,7 @@ label{ font-family: 'Work sans';}
 .mat-slider-thumb-label{}
 */
 .heading3 {
-  font-family: 'Work Sans';
+ // font-family: 'Work Sans';
   font-size: 2.5vw;
   line-height: 3vw;
   letter-spacing: 0;
@@ -45,7 +50,7 @@ p{font-size: 15px;
   line-height: 23px;
   text-transform: none;
   font-weight: 400;
-  color: #6d7783; font-family: 'Work sans'; text-align: center;}
+  color: #6d7783;  text-align: center;}
   .w45{ width: 45%;}
   .w40{ width: 40%;}
   .w50{ width: 50%;}
@@ -65,12 +70,14 @@ p{font-size: 15px;
   /* margin-left: 40px; */
   padding-left: 18px;  padding-top: 0px;  /* margin-top: 14px !important; */
   position: relative;  top: 5px;}
-  .input_text{ font-size: 20px; font-family: 'Work sans'; font-weight: 600; color: #4976ed;}
-  .input_2{ border: none !important; font-family: 'Work snns';}
-  .list_33{}
+  
+  .input_text{ font-size: 20px; font-weight: 600; color: #4976ed;}
+  .input_2{ border: none !important; }
+  //.list_33{}
   .list_33 ul{ padding: 0px; margin: 0px 0px 0px 10px ; list-style: none;}
-  .list_33 ul li{font-size: 9px;line-height: 14px; font-family: 'Work sans'; color: #6d7783; list-style: decimal;}
+  .list_33 ul li{font-size: 9px;line-height: 14px;  color: #6d7783; list-style: decimal;}
   .fs9{text-align: left; font-size:9px; line-height: 12px; font-weight: 600; }
   .pm0{ padding: 0px; margin: 0px;}
 
   input{ border: none !important;}
+  

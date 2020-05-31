@@ -45,7 +45,7 @@
 <div class="w100 mb30">
   <span>What's the type of your physician platform?</span>
   <br/>
-  <mat-form-field class="w100">
+  <mat-form-field class="w100" style="top: -13px;">
     <mat-select [(ngModel)]="selectedPlatform" [(value)]="selectedPlatform" name="platform" (selectionChange)="somethingChanged()">
       <mat-option *ngFor="let platform of platforms" [value]="platform.value">
         {{platform.viewValue}}
@@ -59,7 +59,7 @@
   <label>
     Total number of registered users on your platform? 
   </label>
-  <div fxLayout="column" fxLayoutAlign=" start" class="inputbox combined" >
+  <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
     <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
       <span class="input_text">{{registeredUsers}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()" style="position: relative; top: -6px; z-index: 999;">
@@ -70,7 +70,7 @@
     <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;">
   </div>
   
-  <mat-slider color="primary" style="position: relative; top: -25px; margin: 0px;"
+  <mat-slider color="primary" class="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
   class=" w100"
   
   [disabled]="disabled"
@@ -96,7 +96,7 @@
   <span>
     Total number of registered users on your platform?
   </span>
-  <div fxLayout="column" fxLayoutAlign=" start" class="inputbox combined" >
+  <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
     <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
       <span class="input_text">{{registeredUsers}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()"  style="position: relative; top: -6px; z-index: 999;">
@@ -107,7 +107,7 @@
     <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
   </div>
   
-  <mat-slider color="primary"  style="position: relative; top: -25px; margin: 0px;"
+  <mat-slider color="primary"  class="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
   class="w100"
   [disabled]="disabled"
   [invert]="invert"
@@ -181,7 +181,7 @@
     </p>
   </div>
   <div class="mb30">
-    <button mat-flat-button color="primary" class="button">Schedule a demo</button>
+    <a mat-flat-button color="primary" class="button" href="https://qa.doceree.com/schedule-a-demo/">Schedule a Demo</a>
   </div>
 </div>
 
@@ -209,5 +209,3 @@
   </p>
 </div>
 </div>
-
-

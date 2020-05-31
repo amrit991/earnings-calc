@@ -1,88 +1,173 @@
-
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Work sans' !important; }
-
-mat-button-toggle.mat-button-toggle-checked, mat-button-toggle.cdk-focused, mat-button-toggle.cdk-mouse-focused {
-    background: #4e70ef;
-    background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
-    border-radius: 0px !important; color: #ffffff !important;
-    }
-
-.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
-    line-height: 28px !important;
-    padding: 0 22px !important; font-family: 'Work sans';
+html,
+body {
+  height: 100%;
 }
 
-.circle-progress{ background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
-    border-radius: 0px !important; font-weight: bold;}
+body {
+  margin: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  color: #414143;
+}
+
+mat-button-toggle.mat-button-toggle-checked,
+mat-button-toggle.cdk-focused,
+mat-button-toggle.cdk-mouse-focused {
+  background: #4e70ef;
+  background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+  border-radius: 0px !important;
+  color: #ffffff !important;
+}
+
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+  line-height: 28px !important;
+  padding: 0 22px !important;
+}
+
+.circle-progress {
+  background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+  border-radius: 0px !important;
+  font-weight: bold;
+}
 
 
 .mat-slider-thumb-label {
-    transform: rotate(0deg) !important;
-   border-radius: 0% 0% 0% 0% !important;
-    padding: 0px 15px;
-    margin-top: 25px;
-    margin-left: 10px;
-    right: -28px !important;
-    top: -80px !important;
-    background-image: url('./assets/images/icon_1.png');background-size: cover;
-    height: 35px !important;
-    background-color: transparent !important;
-   // background: url("./assets/Images/icon_1.png") no-repeat center center fixed;
+  transform: rotate(0deg) !important;
+  border-radius: 0% 0% 0% 0% !important;
+  padding: 0px 15px;
+  margin-top: 25px;
+  margin-left: 10px;
+  right: -28px !important;
+  top: -80px !important;
+  background-image: url('./assets/images/icon_1.png');
+  background-size: cover;
+  height: 35px !important;
+  background-color: transparent !important;
+  // background: url("./assets/Images/icon_1.png") no-repeat center center fixed;
 
-    //background-image:url('./assets/images/icon_1.png') no-repeat!important;}
-    //background-image: url('assets/images/icon_1.png');
-   // background: #4e70ef;
-   // background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important; 
-  }
+  //background-image:url('./assets/images/icon_1.png') no-repeat!important;}
+  //background-image: url('assets/images/icon_1.png');
+  // background: #4e70ef;
+  // background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important; 
+}
 
-  .mat-slider-thumb {
-      //transform: scale(10) !important;
-      width: 10px; height: 10px; border-radius: 10px; background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
-      border-radius: 10px !important; border: none !important;
-  }
-  
-  .mat-slider-thumb-label-text {
-      opacity: 1 !important;
-      transform: rotate(0deg) !important; position: relative; top: -3px;
-  }
-    .mat-slider-thumb-container {
-        transition: all 0.3s ease-in-out;
-    }
-    .mat-select-trigger{display: inline-table;
-        cursor: pointer;
-        position: relative;
-        box-sizing: border-box;
-        border: 1px solid #e0e0e0;
-        padding: 7px 15px;
-        border-radius: 4px; font-family: 'Work sans'; margin-top: 5px;} 
-        .mat-select-arrow{width: 0;height: 0;border-left: 9px solid transparent !important;
-            border-right: 7px solid transparent !important;border-top: 8px solid !important;margin: 0px 7px;}
-        .inputbox{ border: 1px solid #e0e0e0;padding: 7px 15px;
-            border-radius: 4px; font-family: 'Work sans' !important; margin-top: 5px; height: 34px;} 
-            .mat-select-arrow{ color: #2aa2f0 !important;}
+.mat-slider-thumb {
+  //transform: scale(10) !important;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+  border-radius: 10px !important;
+  border: none !important;
+}
 
-            //.mat-slider-horizontal .mat-slider-track-wrapper{ border: 1px solid #000000 !important; background: #ccc !important;}
-            //.mat-slider-horizontal .mat-slider-wrapper{}
-            //.mat-slider-ticks{ border: 1px solid #000000;}
+.mat-slider-thumb-label-text {
+  opacity: 1 !important;
+  transform: rotate(0deg) !important;
+  position: relative;
+  top: -3px;
+}
+
+.mat-slider-thumb-container {
+  transition: all 0.3s ease-in-out;
+}
+
+.mat-select-trigger {
+  display: inline-table;
+  cursor: pointer;
+  position: relative;
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0;
+  padding: 7px 15px;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+.mat-select-arrow {
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent !important;
+  border-right: 7px solid transparent !important;
+  border-top: 8px solid !important;
+  margin: 0px 7px;
+}
+
+.inputbox {
+  border: 1px solid #e0e0e0;
+  padding: 7px 15px;
+  border-radius: 4px;
+  margin-top: 9px;
+  height: 34px;
+}
+
+.mat-select-arrow {
+  color: #2aa2f0 !important;
+}
+
+//.mat-slider-horizontal .mat-slider-track-wrapper{ border: 1px solid #000000 !important; background: #ccc !important;}
+//.mat-slider-horizontal .mat-slider-wrapper{}
+//.mat-slider-ticks{ border: 1px solid #000000;}
 
 
-            .mat-slide.mat-checked .mat-slide-bar {
-                background-color:#0056ff;//Your color
-            }
-            .mat-slide.mat-checked .mat-slide-thumb {
-                background-color: #0056ff;//Your color
-            }
-              ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
-                border: none !important
-              }
+.mat-slide.mat-checked .mat-slide-bar {
+  background-color: #0056ff; //Your color
+}
 
-              .mat-form-field-appearance-legacy .mat-form-field-underline {
-                height: 1px;
-                display: none;
-            }
+.mat-slide.mat-checked .mat-slide-thumb {
+  background-color: #0056ff; //Your color
+}
 
-            .mat-slider-horizontal .mat-slider-ticks {
-                background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
-                background-image: -moz-repeating-linear-gradient(0.0001deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
-            }
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-start {
+  border: none !important
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  height: 1px;
+  display: none;
+}
+
+.mat-slider-horizontal .mat-slider-ticks {
+  background-image: repeating-linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
+  background-image: -moz-repeating-linear-gradient(0.0001deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) 2px, transparent 0, transparent);
+}
+
+
+.mat-primary .mat-slider-track-fill, .mat-primary .mat-slider-thumb, .mat-primary .mat-slider-thumb-label {
+    background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
+}
+
+.inputAndSlider .mat-slider-horizontal .mat-slider-track-background {
+    height: 1px !important;
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.mat-slider-horizontal .mat-slider-track-background {
+    height: 1px !important;
+    width: 100%;
+    transform: scaleX(1);
+}
+
+.mat-slider-horizontal .mat-slider-track-fill {
+    height: 2px !important;
+    width: 100%;
+    transform: scaleX(0);
+}
+
+.mat-slider-horizontal .mat-slider-track-wrapper {
+    height: 2px !important;
+    width: 100%;
+}
+
+.mat-slider-thumb {
+    position: absolute;
+    right: -10px;
+    bottom: -9px;
+    box-sizing: border-box;
+    width: 18px;
+    height: 18px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    transform: scale(0.7);
+    transition: transform 400ms cubic-bezier(0.25, 0.8, 0.25, 1),background-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1),border-color 400ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
