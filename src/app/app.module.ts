@@ -66,9 +66,9 @@ import { OnlyNumberDirective } from './only-number.directive';
       "clockwise": false,
       "startFromZero": false,
       "unitsFontSize": "20",
-      "unitsFontWeight": "500",
+      "unitsFontWeight": "600",
       "titleFontSize": "30",
-      "subtitleFontWeight": "800"
+      "subtitleFontWeight": "900"
     })
   ],
   providers: [],
