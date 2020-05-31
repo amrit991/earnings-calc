@@ -239,6 +239,14 @@ mat-button-toggle.cdk-mouse-focused {
 
 }
 
+#dominantBaselineCentral svg {
+  dominant-baseline: central;
+}
+
+#autoDominant svg {
+  dominant-baseline: auto;
+}
+
 #lightgrey svg {
   stroke: #b7b7b7;
 }

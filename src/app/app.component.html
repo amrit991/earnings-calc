@@ -172,7 +172,7 @@
   </div>
 <div class="w30 right" style="margin-top: -18px;margin-right: 24px;"><div fxLayout="column" fxLayoutAlign="space-around center" >
   <div class="desktop" style="margin-bottom: 9px;">
-    <circle-progress
+    <circle-progress [attr.id]="showSubtitle ? 'dominantBaselineCentral' : 'autoDominant'"
     [percent]="circularValue"
     [outerStrokeWidth]="14"
     [showSubtitle] = "showSubtitle"
