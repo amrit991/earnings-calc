@@ -6,8 +6,37 @@
   <br>It is built on anonymized published data to calculate estimated annual earnings.</p>
 
 
+  <div class="mobile" style="text-align: center;">
+    <circle-progress
+    [percent]="circularValue"
+    [outerStrokeWidth]="14"
+    [showSubtitle] = "showSubtitle"
+    [title]= "circularTitle"
+    [innerStrokeWidth]="7"
+    [animation]="true"
+    outerStrokeLinecap = "square"
+    clockwise= "false"
+    lazy= "false"
+    unitsColor= "#4778EF"
+    outerStrokeColor= "#16C0F0"
+    [animationDuration]="169"
+    titleColor= "#16C0F0"
+    titleFontSize = 26
+    unitsFontSize = 13
+    titleFontWeight = 900
+    unitsFontWeight = 900
+    subtitleFontWeight = 400
+    titleColor = #4678df
+  ></circle-progress>
+  </div>
+  <div style="text-align: center;" class="mb30 mobile"> 
+    <p style="font-weight: bold; font-size: 16px; font-weight: 600; color: #1d2733; margin-bottom: 26px;">
+      Estimated annual earnings*
+    </p>
+  </div>
+
   <div class="w60 left">
-<div class="w45 left mb30"> <div class="item">
+<div class="w45 left_2 mb30"> <div class="item">
   <label>Where are your physician users from?</label>
   <br/>
   <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" 
@@ -19,7 +48,7 @@
   </mat-button-toggle-group>
 </div></div>
 
-<div class="w52 right" style="margin-bottom: 25px;">    
+<div class="w52 right_2" style="margin-bottom: 25px;">    
 
   <label>
     What percentage of Physicians are specialists?
@@ -152,7 +181,7 @@
 
   </div>
 <div class="w30 right"><div fxLayout="column" fxLayoutAlign="space-around center" >
-  <div >
+  <div class="desktop">
     <circle-progress
     [percent]="circularValue"
     [outerStrokeWidth]="14"
@@ -175,12 +204,12 @@
     titleColor = #4678df
   ></circle-progress>
   </div>
-  <div>
+  <div class="desktop">
     <p style="font-weight: bold; font-size: 16px; font-weight: 600; color: #1d2733; margin-bottom: 26px;">
       Estimated annual earnings*
     </p>
   </div>
-  <div class="mb30">
+  <div class="mb30 desktop">
     <a mat-flat-button color="primary" class="button" href="https://qa.doceree.com/schedule-a-demo/">Schedule a Demo</a>
   </div>
 </div>

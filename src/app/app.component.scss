@@ -39,8 +39,8 @@ label{ font-size: 14px; }
 */
 .heading3 {
  // font-family: 'Work Sans';
-  font-size: 2.5vw;
-  line-height: 3vw;
+  font-size:25px;
+  
   letter-spacing: 0;
   font-weight: 300;
   color: #1d2733; text-align: center;
@@ -60,6 +60,8 @@ p{font-size: 15px;
   .w100{ width: 100%;}
   .left{ float: left;}
   .right{ float: right;}
+  .left_2{ float: left;}
+  .right_2{ float: right;}
   .clear{ clear: both;}
   .main{ width: 1000px; margin: auto;    box-shadow: 0 0 10px #cbcbcb;
     border-radius: 10px; padding: 50px ; margin-top: 50px; margin-bottom: 50px;}
