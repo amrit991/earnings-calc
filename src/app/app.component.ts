@@ -218,13 +218,7 @@ export class AppComponent implements OnInit{
 
       if (this.richAndFamous !== '') {
         this.showSubtitle = true;
-      console.log(document.getElementsByTagName("tspan"));
-        document.getElementsByTagName("tspan")[1].setAttribute("x", "20");
-        document.getElementsByTagName("tspan")[1].setAttribute("y", "20");
-        document.getElementsByTagName("tspan")[2].setAttribute("x", "20");
-        document.getElementsByTagName("tspan")[2].setAttribute("y", "20");
-        document.getElementsByTagName("tspan")[3].setAttribute("x", "20");
-        document.getElementsByTagName("tspan")[3].setAttribute("y", "20");
+
       }
     } else if (this.activeCountry == 'India') {
       if(grossEarnings > 12000000000) {
@@ -250,9 +244,6 @@ export class AppComponent implements OnInit{
 
       if (this.richAndFamous !== '') {
         this.showSubtitle = true;
-      console.log(document.getElementsByTagName("tspan"));
-        document.getElementsByTagName("tspan")[1].setAttribute("x", "20");
-        document.getElementsByTagName("tspan")[1].setAttribute("y", "20");
       }
     }
 
