@@ -10,7 +10,7 @@ body {
   color: #414143;
 }
 
-.placingCircle{
+.placingCircle {
   margin-top: 20px;
 }
 
@@ -42,7 +42,8 @@ mat-button-toggle.cdk-mouse-focused {
   background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
   border-radius: 0px !important;
   color: #ffffff !important;
-  .mat-button-toggle-label-content{
+
+  .mat-button-toggle-label-content {
     color: white !important;
   }
 }
@@ -106,7 +107,7 @@ mat-button-toggle.cdk-mouse-focused {
   position: relative;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
-  padding: 7px 15px;
+  padding: 9px 15px;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -124,7 +125,7 @@ mat-button-toggle.cdk-mouse-focused {
   border: 1px solid #e0e0e0;
   padding: 7px 15px;
   border-radius: 4px;
-  margin-top: 9px;
+  margin-top: 14px;
   height: 34px;
 }
 
@@ -166,7 +167,7 @@ mat-button-toggle.cdk-mouse-focused {
   background-image: linear-gradient(to right, #41ccf1, #4e70ef) !important;
 }
 
-#inputSlider > .mat-slider-horizontal .mat-slider-track-background {
+#inputSlider>.mat-slider-horizontal .mat-slider-track-background {
   height: 0px !important;
   width: 100%;
   transform: scaleX(1);
@@ -212,8 +213,18 @@ mat-button-toggle.cdk-mouse-focused {
 
 @media screen and (max-width: 767px) {
   .main {
-    width: 70% !important;
-    margin: auto; padding: 20px !important;
+    width: 82% !important;
+    margin: auto;
+    padding: 20px !important;
+  }
+
+  .mobile svg {
+    width: 210px;
+    height: 200px;
+  }
+
+  .mb30 {
+    margin-bottom: 10px !important;
   }
 
   .w60 {
@@ -224,11 +235,22 @@ mat-button-toggle.cdk-mouse-focused {
     display: none;
   }
 
+  .mb25,
+  .mb36 {
+    margin-bottom: 0px !important;
+  }
+
+  .mt20 {
+    margin-top: 20px;
+  }
+
   .mobile {
     display: block;
   }
 
-  .w30, .w45, .w52 {
+  .w30,
+  .w45,
+  .w52 {
     width: 100% !important;
   }
 
@@ -236,21 +258,28 @@ mat-button-toggle.cdk-mouse-focused {
     width: 100%;
     float: left;
   }
-  .mb60{ margin-bottom: 30px !important;}
+
+  .mb60 {
+    margin-bottom: 0px !important;
+  }
+
+  //.placingCircle{ margin-top: 0px;}
 
 }
 
 
-#dominantBaselineCentral svg > text {
-  dominant-baseline: hanging; font-size: 10px !important;
-  dy: 3em; 
+#dominantBaselineCentral svg>text {
+  dominant-baseline: hanging;
+  font-size: 10px !important;
+  dy: 3em;
 }
 
-#autoDominant  svg > text {
+#autoDominant svg>text {
   dominant-baseline: auto;
 }
 
 #lightgrey svg {
   stroke: #b7b7b7;
 }
+
 //tspan:nth-of-type(1){ font-size: 16px !important;}
