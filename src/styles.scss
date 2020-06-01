@@ -239,8 +239,14 @@ mat-button-toggle.cdk-mouse-focused {
 
 }
 
-#dominantBaselineCentral svg {
-  dominant-baseline: central;
+#dominantBaselineCentral svg > text > tspan {
+  dominant-baseline: auto;
+  dy: 3em;
+}
+
+#dominantBaselineCentral svg > text > tspan + tspan {
+  dominant-baseline: hanging;
+  dy: 3em;
 }
 
 #autoDominant svg {
