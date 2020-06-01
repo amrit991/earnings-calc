@@ -220,8 +220,31 @@ export class AppComponent implements OnInit{
       if (this.richAndFamous !== '') {
         this.showSubtitle = true;
       }
-    } else {
-      this.showSubtitle = false;
+    } else if (this.activeCountry == 'India') {
+      if(grossEarnings > 12000000000) {
+        this.richAndFamous = 'Ritesh Agarwal';
+      } else if(grossEarnings > 6000000000 && grossEarnings < 12000000000) {
+        this.richAndFamous = 'MS Dhoni';
+      } else if(grossEarnings > 4000000000 && grossEarnings < 6000000000) {
+        this.richAndFamous = 'Virat Kohli';
+      } else if(grossEarnings > 3000000000 && grossEarnings < 4000000000) {
+        this.richAndFamous = 'Hrithik Roshan';
+      } else if(grossEarnings > 2000000000 && grossEarnings < 3000000000) {
+        this.richAndFamous = 'Deepika Padukone';
+      } else if(grossEarnings > 1500000000 && grossEarnings < 2000000000) {
+        this.richAndFamous = 'Katrina Kaif';
+      } else if(grossEarnings > 1000000000 && grossEarnings < 1500000000) {
+        this.richAndFamous = 'Anushka Sharma';
+      } else if(grossEarnings > 750000000 && grossEarnings < 1000000000) {
+        this.richAndFamous = 'Alia Bhatt';
+      } else {
+        this.richAndFamous = '';
+        this.showSubtitle = false;
+      }
+
+      if (this.richAndFamous !== '') {
+        this.showSubtitle = true;
+      }
     }
 
     let grossEarningsCurrency: string;
