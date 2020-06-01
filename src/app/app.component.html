@@ -2,21 +2,33 @@
   <h2 class="heading3">
     Earnings Calculator
  </h2>
-<p style="margin-bottom: 60px;">Our earnings calculator predicts how much a digital platform may earn with our doceree publisher program.
+<p class="mb60">Our earnings calculator predicts how much a digital platform may earn with our doceree publisher program.
   <br>It is built on anonymized published data to calculate estimated annual earnings.</p>
 
 
   <div class="mobile" style="text-align: center;">
-    <circle-progress style="font-family: 'Work Sans', sans-serif;"
+    <circle-progress style="font-family: 'Work Sans', sans-serif;"   
     [percent]="circularValue"
     [outerStrokeWidth]="14"
     [showSubtitle] = "showSubtitle"
     [title]= "circularTitle"
+    [subtitleFormat]="formatSubtitle" 
     [innerStrokeWidth]="7"
     [animation]="true"
     outerStrokeLinecap = "square"
     clockwise= "false"
-    [subtitleFormat]="formatSubtitle"
+    lazy= "false"
+    unitsColor= "#4778EF"
+    class="placingCircle"
+    outerStrokeColor= "#16C0F0"
+    [animationDuration]="169"
+    titleColor= "#16C0F0"
+    titleFontSize = 26
+    unitsFontSize = 13
+    titleFontWeight = 900
+    unitsFontWeight = 900
+    subtitleFontWeight = 400
+    titleColor = #4678df
   ></circle-progress>
   </div>
   <div style="text-align: center;" class="mb30 mobile"> 
@@ -86,7 +98,7 @@
       </button>
     </span>
    
-    <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;">
+    <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;position: relative; top: -3px;">
   </div>
   
   <mat-slider color="primary" id="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
@@ -123,7 +135,7 @@
       </button>
     </span>
     
-    <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
+    <input id="userInputElement" class="input_text" style="position: relative; top: -3px;" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
   </div>
   
   <mat-slider color="primary"  id="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
@@ -170,9 +182,10 @@
 
 
   </div>
-<div class="w30 right" style="margin-top: -18px;margin-right: 24px;"><div fxLayout="column" fxLayoutAlign="space-around center" >
+<div class="w30 right" style="margin-top: -18px; "><div fxLayout="column" fxLayoutAlign="space-around center" >
   <div class="desktop" style="margin-bottom: 9px;">
-    <circle-progress [attr.id]="showSubtitle ? 'dominantBaselineCentral' : 'autoDominant'"
+    <circle-progress id="dominantBaselineCentral" [attr.id]="showSubtitle ? 'dominantBaselineCentral' : 'autoDominant'"
+   
     [percent]="circularValue"
     [outerStrokeWidth]="14"
     [showSubtitle] = "showSubtitle"
@@ -202,11 +215,11 @@
     </p>
   </div>
   <div class="mb30 desktop" style="    margin-bottom: 20px;">
-    <a mat-flat-button color="primary" class="button" href="https://qa.doceree.com/schedule-a-demo/">Schedule a Demo</a>
+    <a mat-flat-button color="primary" class="button" href="https://qa.doceree.com/schedule-a-demo/" target="blank">Schedule a Demo</a>
   </div>
 </div>
 
-<div class="list_33 mb30" style="width: 362px;margin-top: 16px;">
+<div class="list_33 mb30" >
   <p class="fs9 pm0" style="color: #6d7783;margin-bottom: 8px;"><strong>*Please note that the earnings are based on assumptions, like:</strong></p>
 <ul>
 <li>Average time spent by monthly users on your platforms is same</li>
@@ -222,7 +235,7 @@
 
 <div style="clear: both;"></div>
 
-<div >
+<div>
   <p style="text-align: left; font-size:9px; line-height: 12px;">
     *Disclaimer: Doceree makes no guarantee in the individual performance or earning estimation. 
     Every publisher website is different, with variables such as design, audience geography, content, domain, reputation, 
