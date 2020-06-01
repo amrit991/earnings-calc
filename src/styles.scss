@@ -212,8 +212,8 @@ mat-button-toggle.cdk-mouse-focused {
 
 @media screen and (max-width: 767px) {
   .main {
-    width: 90%;
-    margin: auto;
+    width: 70% !important;
+    margin: auto; padding: 20px !important;
   }
 
   .w60 {
@@ -228,31 +228,29 @@ mat-button-toggle.cdk-mouse-focused {
     display: block;
   }
 
-  .w30 {
+  .w30, .w45, .w52 {
     width: 100% !important;
   }
 
   .list_33 ul li {
-    width: 48%;
+    width: 100%;
     float: left;
   }
+  .mb60{ margin-bottom: 30px !important;}
 
 }
 
-#dominantBaselineCentral svg > text > tspan {
-  dominant-baseline: auto;
-  dy: 3em;
+
+#dominantBaselineCentral svg > text {
+  dominant-baseline: hanging; font-size: 10px !important;
+  dy: 3em; 
 }
 
-#dominantBaselineCentral svg > text > tspan + tspan {
-  dominant-baseline: hanging;
-  dy: 3em;
-}
-
-#autoDominant svg {
+#autoDominant  svg > text {
   dominant-baseline: auto;
 }
 
 #lightgrey svg {
   stroke: #b7b7b7;
 }
+//tspan:nth-of-type(1){ font-size: 16px !important;}
