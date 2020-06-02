@@ -31,14 +31,14 @@
     titleColor = #4678df
   ></circle-progress>
   </div>
-  <div style="text-align: center;" class="mb30 mobile"> 
+  <div style="text-align: center; position: relative; top: -20px;" class="mb30 mobile"> 
     <p style="font-weight: bold; font-size: 16px; font-weight: 600; color: #1d2733; margin-bottom: 26px;">
       Estimated annual earnings*
     </p>
   </div>
 
   <div class="w60 left">
-<div class="w45 left_2 mb30"> <div class="item">
+<div class="w45 left_2 mb30 mobileposition_1"> <div class="item">
   <label class="mb15">Where are your Physician users from?</label>
   <br/>
   <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" 
@@ -50,7 +50,7 @@
   </mat-button-toggle-group>
 </div></div>
 
-<div class="w52 right_2 mb25 mt20" >    
+<div class="w52 right_2 mb25 mt20 mobileposition_2" >    
 
   <label>
     What percentage of Physicians are specialists?
@@ -74,7 +74,7 @@
 </div>
 <div class="clear"></div>
 
-<div class="w100 mb30">
+<div class="w100 mb30 mobileposition_3">
   <label class="mb10">What's the type of your Physician platform?</label>
   <br/>
   <mat-form-field class="w100" style="top: -9px;">
@@ -87,18 +87,18 @@
 </div>
 
 
-<div class="w100 mb36" *ngIf="activeCountry == 'India'">
+<div class="w100 mb36 mobileposition_4" *ngIf="activeCountry == 'India'">
   <label>
-    Total number of monthly active users on your platform? 
+    Total number of monthly active on your platform? 
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
-    <span *ngIf="!editingUsers" style="position: relative; top: -10px; z-index: 999;">
+    <span *ngIf="!editingUsers" style="position: relative; top: -10px; z-index: 99;">
       <span class="input_text" (click)="enableUserEditMode()">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()" style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
     </span>
-    
+   
     <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;position: relative; top: -3px;">
   </div>
   
@@ -124,12 +124,12 @@
 
 </div>
 
-<div class="w100" *ngIf="activeCountry == 'US'" style="margin-bottom: 36px;">
+<div class="w100 mobileposition_5" *ngIf="activeCountry == 'US'" style="margin-bottom: 36px;">
   <label>
-    Total number of monthly active users on your platform?
+    Total number of monthly active on your platform?
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
-    <span *ngIf="!editingUsers" style="position: relative; top: -10px;z-index: 999;">
+    <span *ngIf="!editingUsers" style="position: relative; top: -10px; z-index: 99999;">
       <span class="input_text" (click)="enableUserEditMode()">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()"  style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
@@ -159,7 +159,7 @@
 <div class="clear"></div>
 
 
-<div class="w100 mb30">
+<div class="w100 mb30" [ngClass]="{'mobileposition_8': activeCountry == 'India', 'mobileposition_9':activeCountry == 'US' }">
   <label class="mb10">
     Total number of ad slots to be registered?
   </label>
@@ -220,7 +220,7 @@
   </div>
 </div>
 
-<div class="list_33 mb30 mt20 list_footer" >
+<div class="list_33 mb30 mt20 list_footer mobileposition_8" >
   <p class="fs9 pm0" style="color: #6d7783;margin-bottom: 8px;"><strong>*Please note that the earnings are based on assumptions, like:</strong></p>
 <ul>
 <li>Average time spent by monthly users on your platforms is same</li>
@@ -236,7 +236,7 @@
 
 <div style="clear: both;"></div>
 
-<div> 
+<div  class="mobileposition_8"> 
   <p style="text-align: left; font-size:9px; line-height: 12px;">
     *Disclaimer: Doceree makes no guarantee in the individual performance or earning estimation. 
     Every publisher website is different, with variables such as design, audience geography, content, domain, reputation, 
