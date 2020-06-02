@@ -214,9 +214,10 @@ mat-button-toggle.cdk-mouse-focused {
 
 @media screen and (max-width: 767px) {
   .main {
-    width: 100% !important;
-    margin: auto; padding: 20px !important;
+    width: 90% !important;
+    margin: auto; padding: 5% !important; box-shadow: none !important;
   }
+  label{ font-size: 13px !important;}
   .mobile svg{ width: 210px; height: 200px;}
 
   .mb30{ margin-bottom: 10px !important;}
@@ -226,12 +227,12 @@ mat-button-toggle.cdk-mouse-focused {
   }
 .mobileposition_1{position: relative;top: -28px;}
 .mobileposition_2{position: relative;top: -38px;}
-.mobileposition_3{position: relative;top: -53px;}
-.mobileposition_4{position: relative;top: -80px;}
-.mobileposition_5{position: relative;top: -80px;}
+.mobileposition_3{position: relative;top: -48px;}
+.mobileposition_4{position: relative;top: -65px;}
+.mobileposition_5{position: relative;top: -64px;}
 .mobileposition_6{position: relative;top: -89px;}
-.mobileposition_8{position: relative;top: -106px;}
-.mobileposition_9{position: relative;top: -125px;}
+.mobileposition_8{position: relative;top: -88px;}
+.mobileposition_9{position: relative;top: -102px;}
 
   .desktop {
     display: none;
