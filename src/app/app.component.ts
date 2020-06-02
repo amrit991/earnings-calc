@@ -46,7 +46,7 @@ export class AppComponent implements OnInit{
   step = 1;
   stepUsers = 50;
   thumbLabel = true;
-  showSubtitle = true;
+  showSubtitle = false;
   registeredUsers = 50;
   registeredUsersComma = '50';
   totalSlots = 1;
@@ -191,61 +191,61 @@ export class AppComponent implements OnInit{
                     ( ((grossEarnings * nonSpecialists) / 100) * this.specialityMultiplier.nonSpecialist);
     grossEarnings = Math.round((grossEarnings + Number.EPSILON) * 100) / 100;
     grossEarnings = Math.round(grossEarnings);
-    this.richAndFamous = '';
-    if(this.activeCountry == 'US') {
-      if(grossEarnings > 28000000000) {
-        this.richAndFamous = 'McKenzie Bezos';
-      } else if(grossEarnings > 23000000000 && grossEarnings < 28000000000) {
-        this.richAndFamous = 'Elon Musk';
-      } else if(grossEarnings > 16000000000 && grossEarnings < 23000000000) {
-        this.richAndFamous = 'Michael Dell';
-      } else if(grossEarnings > 12000000000 && grossEarnings < 16000000000) {
-        this.richAndFamous = 'Rupert Murdoch';
-      } else if(grossEarnings > 8000000000 && grossEarnings < 12000000000) {
-        this.richAndFamous = 'Shiv Nader';
-      } else if(grossEarnings > 5000000000 && grossEarnings < 8000000000) {
-        this.richAndFamous = 'Jim Kennedy';
-      } else if(grossEarnings > 2000000000 && grossEarnings < 5000000000) {
-        this.richAndFamous = 'Donald Trump';
-      } else if(grossEarnings > 700000000 && grossEarnings < 2000000000) {
-        this.richAndFamous = 'Jay-Z + Beyonce';
-      } else if(grossEarnings > 500000000 && grossEarnings < 700000000) {
-        this.richAndFamous = 'Jennifer Lopez';
-      } else {
-        this.richAndFamous = '';
-        this.showSubtitle = false;
-      }
+    //this.richAndFamous = '';
+    // if(this.activeCountry == 'US') {
+    //   if(grossEarnings > 28000000000) {
+    //     this.richAndFamous = 'McKenzie Bezos';
+    //   } else if(grossEarnings > 23000000000 && grossEarnings < 28000000000) {
+    //     this.richAndFamous = 'Elon Musk';
+    //   } else if(grossEarnings > 16000000000 && grossEarnings < 23000000000) {
+    //     this.richAndFamous = 'Michael Dell';
+    //   } else if(grossEarnings > 12000000000 && grossEarnings < 16000000000) {
+    //     this.richAndFamous = 'Rupert Murdoch';
+    //   } else if(grossEarnings > 8000000000 && grossEarnings < 12000000000) {
+    //     this.richAndFamous = 'Shiv Nader';
+    //   } else if(grossEarnings > 5000000000 && grossEarnings < 8000000000) {
+    //     this.richAndFamous = 'Jim Kennedy';
+    //   } else if(grossEarnings > 2000000000 && grossEarnings < 5000000000) {
+    //     this.richAndFamous = 'Donald Trump';
+    //   } else if(grossEarnings > 700000000 && grossEarnings < 2000000000) {
+    //     this.richAndFamous = 'Jay-Z + Beyonce';
+    //   } else if(grossEarnings > 500000000 && grossEarnings < 700000000) {
+    //     this.richAndFamous = 'Jennifer Lopez';
+    //   } else {
+    //     this.richAndFamous = '';
+    //     this.showSubtitle = false;
+    //   }
 
-      if (this.richAndFamous !== '') {
-        this.showSubtitle = true;
+    //   if (this.richAndFamous !== '') {
+    //     this.showSubtitle = true;
 
-      }
-    } else if (this.activeCountry == 'India') {
-      if(grossEarnings > 12000000000) {
-        this.richAndFamous = 'Ritesh Agarwal';
-      } else if(grossEarnings > 6000000000 && grossEarnings < 12000000000) {
-        this.richAndFamous = 'MS Dhoni';
-      } else if(grossEarnings > 4000000000 && grossEarnings < 6000000000) {
-        this.richAndFamous = 'Virat Kohli';
-      } else if(grossEarnings > 3000000000 && grossEarnings < 4000000000) {
-        this.richAndFamous = 'Hrithik Roshan';
-      } else if(grossEarnings > 2000000000 && grossEarnings < 3000000000) {
-        this.richAndFamous = 'Deepika Padukone';
-      } else if(grossEarnings > 1500000000 && grossEarnings < 2000000000) {
-        this.richAndFamous = 'Katrina Kaif';
-      } else if(grossEarnings > 1000000000 && grossEarnings < 1500000000) {
-        this.richAndFamous = 'Anushka Sharma';
-      } else if(grossEarnings > 750000000 && grossEarnings < 1000000000) {
-        this.richAndFamous = 'Alia Bhatt';
-      } else {
-        this.richAndFamous = '';
-        this.showSubtitle = false;
-      }
+    //   }
+    // } else if (this.activeCountry == 'India') {
+    //   if(grossEarnings > 12000000000) {
+    //     this.richAndFamous = 'Ritesh Agarwal';
+    //   } else if(grossEarnings > 6000000000 && grossEarnings < 12000000000) {
+    //     this.richAndFamous = 'MS Dhoni';
+    //   } else if(grossEarnings > 4000000000 && grossEarnings < 6000000000) {
+    //     this.richAndFamous = 'Virat Kohli';
+    //   } else if(grossEarnings > 3000000000 && grossEarnings < 4000000000) {
+    //     this.richAndFamous = 'Hrithik Roshan';
+    //   } else if(grossEarnings > 2000000000 && grossEarnings < 3000000000) {
+    //     this.richAndFamous = 'Deepika Padukone';
+    //   } else if(grossEarnings > 1500000000 && grossEarnings < 2000000000) {
+    //     this.richAndFamous = 'Katrina Kaif';
+    //   } else if(grossEarnings > 1000000000 && grossEarnings < 1500000000) {
+    //     this.richAndFamous = 'Anushka Sharma';
+    //   } else if(grossEarnings > 750000000 && grossEarnings < 1000000000) {
+    //     this.richAndFamous = 'Alia Bhatt';
+    //   } else {
+    //     this.richAndFamous = '';
+    //     this.showSubtitle = false;
+    //   }
 
-      if (this.richAndFamous !== '') {
-        this.showSubtitle = true;
-      }
-    }
+    //   if (this.richAndFamous !== '') {
+    //     this.showSubtitle = true;
+    //   }
+    // }
 
     let grossEarningsCurrency: string;
     let maxGross: number;
