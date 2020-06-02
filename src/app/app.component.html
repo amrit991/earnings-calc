@@ -98,7 +98,7 @@
         <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
     </span>
-   
+    
     <input id="userInputElement" class="input_text" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()" style="border: 0px !important;position: relative; top: -3px;">
   </div>
   
