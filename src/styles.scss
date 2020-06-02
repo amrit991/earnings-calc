@@ -106,7 +106,7 @@ mat-button-toggle.cdk-mouse-focused {
   position: relative;
   box-sizing: border-box;
   border: 1px solid #e0e0e0;
-  padding: 7px 15px;
+  padding: 9px 15px;
   border-radius: 4px;
   margin-top: 5px;
 }
@@ -124,7 +124,7 @@ mat-button-toggle.cdk-mouse-focused {
   border: 1px solid #e0e0e0;
   padding: 7px 15px;
   border-radius: 4px;
-  margin-top: 9px;
+  margin-top: 14px;
   height: 34px;
 }
 
@@ -212,9 +212,12 @@ mat-button-toggle.cdk-mouse-focused {
 
 @media screen and (max-width: 767px) {
   .main {
-    width: 70% !important;
+    width: 82% !important;
     margin: auto; padding: 20px !important;
   }
+  .mobile svg{ width: 210px; height: 200px;}
+
+  .mb30{ margin-bottom: 10px !important;}
 
   .w60 {
     width: 100% !important;
@@ -223,6 +226,8 @@ mat-button-toggle.cdk-mouse-focused {
   .desktop {
     display: none;
   }
+  .mb25, .mb36{ margin-bottom: 0px !important;}
+  .mt20{ margin-top: 20px;}
 
   .mobile {
     display: block;
@@ -236,7 +241,9 @@ mat-button-toggle.cdk-mouse-focused {
     width: 100%;
     float: left;
   }
-  .mb60{ margin-bottom: 30px !important;}
+  .mb60{ margin-bottom: 0px !important;}
+
+  //.placingCircle{ margin-top: 0px;}
 
 }
 

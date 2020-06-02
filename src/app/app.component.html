@@ -39,10 +39,10 @@
 
   <div class="w60 left">
 <div class="w45 left_2 mb30"> <div class="item">
-  <label>Where are your Physician users from?</label>
+  <label class="mb15">Where are your Physician users from?</label>
   <br/>
   <mat-button-toggle-group #group="matButtonToggleGroup" [(ngModel)]="activeCountry" 
-  value="US" (change)="somethingChanged()" style="margin-top: 10px;">
+  value="US" (change)="somethingChanged()" class="mt15">
     <mat-button-toggle color="primary" value="India">India
     </mat-button-toggle>
     <mat-button-toggle color="primary" value="US">US
@@ -50,12 +50,13 @@
   </mat-button-toggle-group>
 </div></div>
 
-<div class="w52 right_2" style="margin-bottom: 25px;">    
+<div class="w52 right_2 mb25 mt20" >    
 
   <label>
     What percentage of Physicians are specialists?
   </label>
-  <div fxLayout="column" fxLayoutAlign=" start" >
+  <div class="mt5">
+  <div fxLayout="column" fxLayoutAlign=" start"  >
     <p  class="slider_text">{{specialityFocussed}} %</p>
   </div>
   <mat-slider color="primary" 
@@ -69,14 +70,14 @@
     [value]="specialityFocussed" (change)="somethingChanged()">
   </mat-slider>
 <div style="position: relative; top: -30px;"><div class="30 left"><span>0%</span></div>
-<div class="30 right"><span>100%</span></div></div>
+<div class="30 right"><span>100%</span></div></div></div>
 </div>
 <div class="clear"></div>
 
 <div class="w100 mb30">
-  <span>What's the type of your Physician platform?</span>
+  <label class="mb10">What's the type of your Physician platform?</label>
   <br/>
-  <mat-form-field class="w100" style="top: -13px;">
+  <mat-form-field class="w100" style="top: -9px;">
     <mat-select [(ngModel)]="selectedPlatform" [(value)]="selectedPlatform" name="platform" (selectionChange)="somethingChanged()">
       <mat-option *ngFor="let platform of platforms" [value]="platform.value">
         {{platform.viewValue}}
@@ -86,13 +87,13 @@
 </div>
 
 
-<div class="w100" *ngIf="activeCountry == 'India'" style="margin-bottom: 36px;">
+<div class="w100 mb36" *ngIf="activeCountry == 'India'">
   <label>
     Total number of registered users on your platform? 
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
     <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
-      <span class="input_text">{{registeredUsersComma}}</span>
+      <span class="input_text" (click)="enableUserEditMode()">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()" style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
@@ -124,14 +125,14 @@
 </div>
 
 <div class="w100" *ngIf="activeCountry == 'US'" style="margin-bottom: 36px;">
-  <span>
+  <label>
     Total number of registered users on your platform?
-  </span>
+  </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
     <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
-      <span class="input_text">{{registeredUsersComma}}</span>
+      <span class="input_text" (click)="enableUserEditMode()">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()"  style="position: relative; top: -6px; z-index: 999;">
-        <mat-icon class="size-16" svgIcon="unicorn_edit_icon"></mat-icon>
+        <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
       </button>
     </span>
     
@@ -159,7 +160,7 @@
 
 
 <div class="w100 mb30">
-  <label>
+  <label class="mb10">
     Total number of ad slots to be registered?
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" >
@@ -219,7 +220,7 @@
   </div>
 </div>
 
-<div class="list_33 mb30" >
+<div class="list_33 mb30 mt20" >
   <p class="fs9 pm0" style="color: #6d7783;margin-bottom: 8px;"><strong>*Please note that the earnings are based on assumptions, like:</strong></p>
 <ul>
 <li>Average time spent by monthly users on your platforms is same</li>
@@ -235,7 +236,7 @@
 
 <div style="clear: both;"></div>
 
-<div>
+<div> 
   <p style="text-align: left; font-size:9px; line-height: 12px;">
     *Disclaimer: Doceree makes no guarantee in the individual performance or earning estimation. 
     Every publisher website is different, with variables such as design, audience geography, content, domain, reputation, 
