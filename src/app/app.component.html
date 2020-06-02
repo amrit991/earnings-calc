@@ -92,7 +92,7 @@
     Total number of registered users on your platform? 
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
-    <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
+    <span *ngIf="!editingUsers" style="position: relative; top: -10px; z-index: 999;">
       <span class="input_text" (click)="enableUserEditMode()">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()" style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
@@ -129,7 +129,7 @@
     Total number of registered users on your platform?
   </label>
   <div fxLayout="column" fxLayoutAlign=" start" class="inputbox" >
-    <span *ngIf="!editingUsers" style="position: relative; top: -10px;">
+    <span *ngIf="!editingUsers" style="position: relative; top: -10px;z-index: 999;">
       <span class="input_text" (click)="enableUserEditMode()">{{registeredUsersComma}}</span>
       <button mat-button *ngIf="!editingUsers" matSuffix mat-icon-button aria-label="Clear" (click)="enableUserEditMode()"  style="position: relative; top: -6px; z-index: 999;">
         <mat-icon class="size-16" id="lightgrey" svgIcon="unicorn_edit_icon"></mat-icon>
