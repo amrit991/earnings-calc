@@ -48,6 +48,15 @@ label {
   transform: scale(1);
 }
 
+.mb15{ margin-bottom: 15px !important;}
+.mt15{ margin-top: 15px !important;}
+
+.mb10{ margin-bottom: 10px !important;}
+.mt10{ margin-top: 10px !important;}
+
+.mb5{ margin-bottom: 5px !important;}
+.mt5{ margin-top: 5px !important;}
+
 /*
 .mat-slider-thumb-label{}
 */
@@ -92,8 +101,12 @@ p {
 }
 
 .w30 {
-  width: 30%;
+  width: 36%;
 }
+.mb25{ margin-bottom: 25px;}
+
+
+.mb36{ margin-bottom: 36px;}
 
 .w100 {
   width: 100%;
@@ -142,6 +155,8 @@ p {
   top: -14px;
   padding: 0px !important;
 }
+
+.mb60{ margin-bottom: 60px;}
 
 .slider_text {
   margin: 0px !important;
