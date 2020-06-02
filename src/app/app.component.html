@@ -137,7 +137,7 @@
     
     <input id="userInputElement" class="input_text" style="position: relative; top: -3px;" appAutofocus OnlyNumber="true" *ngIf="editingUsers" matInput type="text" [(ngModel)]="registeredUsers" [disabled]="!editingUsers" (change)="somethingChanged()" autofocus (focusout)="disableUserEditMode()">
   </div>
-  
+   
   <mat-slider color="primary"  id="inputAndSlider" style="position: relative; top: -25px; margin: 0px;"
   class="w100"
   [disabled]="disabled"
